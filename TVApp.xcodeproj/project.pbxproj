@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76127BA781500C19E44 /* AppDelegate.swift */; };
-		3076C76427BA781500C19E44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76327BA781500C19E44 /* SceneDelegate.swift */; };
 		3076C76627BA781500C19E44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76527BA781500C19E44 /* ViewController.swift */; };
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
 		3076C76E27BA781600C19E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		3076C75E27BA781500C19E44 /* TVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076C76127BA781500C19E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3076C76327BA781500C19E44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3076C76527BA781500C19E44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3076C76A27BA781600C19E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3076C76D27BA781600C19E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				3076C76127BA781500C19E44 /* AppDelegate.swift */,
-				3076C76327BA781500C19E44 /* SceneDelegate.swift */,
 				3076C76527BA781500C19E44 /* ViewController.swift */,
 				3076C76A27BA781600C19E44 /* Assets.xcassets */,
 				3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */,
@@ -264,7 +261,6 @@
 			files = (
 				3076C76627BA781500C19E44 /* ViewController.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,
-				3076C76427BA781500C19E44 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
