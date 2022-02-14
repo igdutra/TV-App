@@ -14,8 +14,6 @@
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
 		3076C76E27BA781600C19E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */; };
 		3076C77927BA781600C19E44 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C77827BA781600C19E44 /* TVAppTests.swift */; };
-		3076C78327BA781600C19E44 /* TVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C78227BA781600C19E44 /* TVAppUITests.swift */; };
-		3076C78527BA781600C19E44 /* TVAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C78427BA781600C19E44 /* TVAppUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +45,6 @@
 		3076C77427BA781600C19E44 /* TVAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076C77827BA781600C19E44 /* TVAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppTests.swift; sourceTree = "<group>"; };
 		3076C77E27BA781600C19E44 /* TVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3076C78227BA781600C19E44 /* TVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppUITests.swift; sourceTree = "<group>"; };
-		3076C78427BA781600C19E44 /* TVAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +77,6 @@
 			children = (
 				3076C76027BA781500C19E44 /* TVApp */,
 				3076C77727BA781600C19E44 /* TVAppTests */,
-				3076C78127BA781600C19E44 /* TVAppUITests */,
 				3076C75F27BA781500C19E44 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,15 +111,6 @@
 				3076C77827BA781600C19E44 /* TVAppTests.swift */,
 			);
 			path = TVAppTests;
-			sourceTree = "<group>";
-		};
-		3076C78127BA781600C19E44 /* TVAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3076C78227BA781600C19E44 /* TVAppUITests.swift */,
-				3076C78427BA781600C19E44 /* TVAppUITestsLaunchTests.swift */,
-			);
-			path = TVAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3076C78527BA781600C19E44 /* TVAppUITestsLaunchTests.swift in Sources */,
-				3076C78327BA781600C19E44 /* TVAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +430,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +458,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
