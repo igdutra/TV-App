@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: find a tv show placeholder image
+
 extension UIImageView {
     func from(url: String, placeholder: UIImage? = nil) {
         image = placeholder
