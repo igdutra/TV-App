@@ -12,6 +12,7 @@
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
 		3076C76E27BA781600C19E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */; };
 		3076C77927BA781600C19E44 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C77827BA781600C19E44 /* TVAppTests.swift */; };
+		30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		3076C77427BA781600C19E44 /* TVAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076C77827BA781600C19E44 /* TVAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppTests.swift; sourceTree = "<group>"; };
 		3076C77E27BA781600C19E44 /* TVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				308AE08427BB2A6C00366DF4 /* Application */,
-				308AE08327BB285000366DF4 /* Scenes */,
 				308AE08227BB284500366DF4 /* Resources */,
+				30C6B1A427BB3E7400ECE329 /* Helpers */,
+				308AE08327BB285000366DF4 /* Scenes */,
 			);
 			path = TVApp;
 			sourceTree = "<group>";
@@ -129,6 +132,22 @@
 				3076C76127BA781500C19E44 /* AppDelegate.swift */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		30C6B1A427BB3E7400ECE329 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B1A527BB3E8200ECE329 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		30C6B1A527BB3E8200ECE329 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3076C76627BA781500C19E44 /* ViewController.swift in Sources */,
+				30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
