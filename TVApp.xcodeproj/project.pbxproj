@@ -16,6 +16,9 @@
 		30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */; };
 		30C6B1AC27BB435500ECE329 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1AB27BB435500ECE329 /* EpisodeService.swift */; };
 		30C6B1AF27BB446100ECE329 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1AE27BB446100ECE329 /* EpisodeResponse.swift */; };
+		30C6B1B127BBC23100ECE329 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1B027BBC23100ECE329 /* ApiError.swift */; };
+		30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1B327BBC5D800ECE329 /* Api.swift */; };
+		30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1B527BBC67C00ECE329 /* ApiEndpointProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeEndpoints.swift; sourceTree = "<group>"; };
 		30C6B1AB27BB435500ECE329 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
 		30C6B1AE27BB446100ECE329 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
+		30C6B1B027BBC23100ECE329 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		30C6B1B327BBC5D800ECE329 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		30C6B1B527BBC67C00ECE329 /* ApiEndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpointProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +168,9 @@
 		30C6B1A827BB405200ECE329 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */,
+				30C6B1B227BBC5C900ECE329 /* Endpoints */,
+				30C6B1B027BBC23100ECE329 /* ApiError.swift */,
+				30C6B1B327BBC5D800ECE329 /* Api.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -173,6 +181,23 @@
 				30C6B1AE27BB446100ECE329 /* EpisodeResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		30C6B1B227BBC5C900ECE329 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B1B727BBC70000ECE329 /* Protocol */,
+				30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		30C6B1B727BBC70000ECE329 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B1B527BBC67C00ECE329 /* ApiEndpointProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,11 +352,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C6B1B127BBC23100ECE329 /* ApiError.swift in Sources */,
 				30C6B1AF27BB446100ECE329 /* EpisodeResponse.swift in Sources */,
 				3076C76627BA781500C19E44 /* ViewController.swift in Sources */,
 				30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,
 				30C6B1AC27BB435500ECE329 /* EpisodeService.swift in Sources */,
+				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,
+				30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */,
 				30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
