@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		302E742A27BCA97A00FE4763 /* ChainedConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 302E742927BCA97A00FE4763 /* ChainedConstraints */; };
+		302E742D27BCAC3200FE4763 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E742C27BCAC3200FE4763 /* ViewConfiguration.swift */; };
+		302E742F27BCAD3200FE4763 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E742E27BCAD3200FE4763 /* UITableView.swift */; };
+		302E743127BCAE9700FE4763 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E743027BCAE9700FE4763 /* Constraints.swift */; };
 		3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76127BA781500C19E44 /* AppDelegate.swift */; };
 		3076C76627BA781500C19E44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76527BA781500C19E44 /* ViewController.swift */; };
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		302E742C27BCAC3200FE4763 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		302E742E27BCAD3200FE4763 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = ../../../../UITableView.swift; sourceTree = "<group>"; };
+		302E743027BCAE9700FE4763 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		3076C75E27BA781500C19E44 /* TVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076C76127BA781500C19E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3076C76527BA781500C19E44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302E742B27BCABB700FE4763 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				302E742C27BCAC3200FE4763 /* ViewConfiguration.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		3076C75527BA781500C19E44 = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +168,9 @@
 		30C6B1A427BB3E7400ECE329 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				302E742B27BCABB700FE4763 /* Protocols */,
 				30C6B1A527BB3E8200ECE329 /* Extensions */,
+				302E743027BCAE9700FE4763 /* Constraints.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 		30C6B1A527BB3E8200ECE329 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				302E742E27BCAD3200FE4763 /* UITableView.swift */,
 				30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */,
 			);
 			path = Extensions;
@@ -363,9 +380,12 @@
 				30C6B1B127BBC23100ECE329 /* ApiError.swift in Sources */,
 				30C6B1AF27BB446100ECE329 /* EpisodeResponse.swift in Sources */,
 				3076C76627BA781500C19E44 /* ViewController.swift in Sources */,
+				302E742D27BCAC3200FE4763 /* ViewConfiguration.swift in Sources */,
+				302E743127BCAE9700FE4763 /* Constraints.swift in Sources */,
 				30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,
 				30C6B1AC27BB435500ECE329 /* EpisodeService.swift in Sources */,
+				302E742F27BCAD3200FE4763 /* UITableView.swift in Sources */,
 				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,
 				30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */,
 				30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */,

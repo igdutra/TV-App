@@ -8,13 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - UI Elements
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .blue
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .green
+        setup()
     }
-
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         print("transaction!")
@@ -28,5 +39,19 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+    }
+}
+
+// MARK: - ViewConfiguration
+extension ViewController: ViewConfiguration {
+    func setupHierarchy() {
+        view.addSubview(tableView)
+    }
+    
+    func setupConstraints() {
+        tableView.edgesToSuperView(toSafeArea: true)
+    }
+    
+    func setupConfigurations() {
     }
 }
