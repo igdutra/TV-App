@@ -27,6 +27,7 @@
 		30C6B1B127BBC23100ECE329 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1B027BBC23100ECE329 /* ApiError.swift */; };
 		30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1B327BBC5D800ECE329 /* Api.swift */; };
 		30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1B527BBC67C00ECE329 /* ApiEndpointProtocol.swift */; };
+		30C6ED7D27BCC59A00EC55D2 /* EpisodeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6ED7C27BCC59A00EC55D2 /* EpisodeDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		30C6B1B027BBC23100ECE329 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		30C6B1B327BBC5D800ECE329 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		30C6B1B527BBC67C00ECE329 /* ApiEndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpointProtocol.swift; sourceTree = "<group>"; };
+		30C6ED7C27BCC59A00EC55D2 /* EpisodeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				302E744227BCBB9800FE4763 /* EpisodeViewController.swift */,
 				302E744327BCBB9800FE4763 /* EpisodeInteractor.swift */,
 				302E744427BCBB9800FE4763 /* EpisodeService.swift */,
+				30C6ED7B27BCC56900EC55D2 /* DataSource */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -237,6 +240,14 @@
 				30C6B1B527BBC67C00ECE329 /* ApiEndpointProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		30C6ED7B27BCC56900EC55D2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				30C6ED7C27BCC59A00EC55D2 /* EpisodeDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +416,7 @@
 				302E744627BCBB9800FE4763 /* EpisodeFactory.swift in Sources */,
 				30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,
+				30C6ED7D27BCC59A00EC55D2 /* EpisodeDataSource.swift in Sources */,
 				302E744A27BCBB9800FE4763 /* EpisodeService.swift in Sources */,
 				302E742F27BCAD3200FE4763 /* UITableView.swift in Sources */,
 				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,

@@ -1,13 +1,14 @@
 import UIKit
 
 protocol EpisodeDisplaying: AnyObject {
-    func reloadData()
+    func display(episode: EpisodeResponse)
 }
 
 final class EpisodeViewController: UIViewController {
     // MARK: - Properties
     
     private let interactor: EpisodeInteracting
+    private lazy var tableViewDataSource: EpisodeDataSource = .init()
     
     private struct Constants {
         static let title = "Episodes"
@@ -37,22 +38,6 @@ final class EpisodeViewController: UIViewController {
         setup()
         interactor.setup()
     }
-    
-    // TODO: remove
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        print("transaction!")
-        let service = EpisodeService()
-        
-        service.getEpisode { result in
-            switch result {
-            case .success(let episode):
-                print(episode)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }
 
 // MARK: - ViewConfiguration
@@ -68,14 +53,15 @@ extension EpisodeViewController: ViewConfiguration {
     func setupConfigurations() {
         title = Constants.title
         tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = tableViewDataSource
         tableView.register(cellClass: UITableViewCell.self)
     }
 }
 
 // MARK: - EpisodeDisplaying
 extension EpisodeViewController: EpisodeDisplaying {
-    func reloadData() {
+    func display(episode: EpisodeResponse) {
+        tableViewDataSource.data = episode
         tableView.reloadData()
     }
 }
@@ -84,16 +70,16 @@ extension EpisodeViewController: EpisodeDisplaying {
 // Header, Footer, willDisplay, didSelectRowAt..
 extension EpisodeViewController: UITableViewDelegate { }
 
-extension EpisodeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
-            return UITableViewCell()
-        }
-        cell.textLabel?.text = "test"
-        return cell
-    }
-}
+//extension EpisodeViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 3
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
+//            return UITableViewCell()
+//        }
+//        cell.textLabel?.text = "test"
+//        return cell
+//    }
+//}

@@ -18,7 +18,7 @@ final class EpisodePresenter {
 // MARK: - EpisodePresenting
 extension EpisodePresenter: EpisodePresenting {
     func presentEpisode(_ episode: EpisodeResponse) {
-        viewController?.reloadData()
+        viewController?.display(episode: episode)
     }
     
     func didNextStep(action: EpisodeAction) {
