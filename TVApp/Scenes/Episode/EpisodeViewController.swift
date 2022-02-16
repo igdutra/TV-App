@@ -1,20 +1,17 @@
-//
-//  ViewController.swift
-//  TVApp
-//
-//  Created by Ivo Dutra on 14/02/22.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+protocol EpisodeDisplaying: AnyObject {
+    func displaySomething()
+}
+
+final class EpisodeViewController: UIViewController {
+    // MARK: - Properties
+    
+    private let interactor: EpisodeInteracting
+    
     private struct Constants {
         static let title = "Episodes"
     }
-    
-    // MARK: - Properties
-    
-    let cellId = "teste"
     
     // MARK: - UI Elements
     
@@ -25,13 +22,23 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .green
-        setup()
+    init(interactor: EpisodeInteracting) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder: NSCoder) { nil }
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .green
+        setup()
+        interactor.setup()
+    }
+    
+    // TODO: remove
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         print("transaction!")
@@ -49,7 +56,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - ViewConfiguration
-extension ViewController: ViewConfiguration {
+extension EpisodeViewController: ViewConfiguration {
     func setupHierarchy() {
         view.addSubviews([tableView])
     }
@@ -66,11 +73,18 @@ extension ViewController: ViewConfiguration {
     }
 }
 
+// MARK: - EpisodeDisplaying
+extension EpisodeViewController: EpisodeDisplaying {
+    func displaySomething() { 
+        // Template
+    }
+}
+
 // MARK: - Table View
 // Header, Footer, willDisplay, didSelectRowAt..
-extension ViewController: UITableViewDelegate { }
+extension EpisodeViewController: UITableViewDelegate { }
 
-extension ViewController: UITableViewDataSource {
+extension EpisodeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
