@@ -7,7 +7,7 @@ protocol EpisodeInteracting: AnyObject {
 final class EpisodeInteractor {
     private let service: EpisodeServicing
     private let presenter: EpisodePresenting
-    private var episode: EpisodeResponse?
+    private var episodes: Episodes?
 
     init(service: EpisodeServicing,
          presenter: EpisodePresenting) {
@@ -21,9 +21,9 @@ extension EpisodeInteractor: EpisodeInteracting {
     func setup() {
         service.getEpisode { [weak self] result in
             switch result {
-            case .success(let episode):
-                self?.episode = episode
-                self?.presenter.presentEpisode(episode)
+            case .success(let episodes):
+                self?.episodes = episodes
+                self?.presenter.presentEpisode(episodes)
             case .failure(let apiError):
                 // Here the error can be handled (client, server, ...)
                 print(apiError)

@@ -2,7 +2,7 @@ import UIKit
 import ChainedConstraints
 
 protocol EpisodeDisplaying: AnyObject {
-    func display(episode: EpisodeResponse)
+    func display(episodes: Episodes)
 }
 
 final class EpisodeViewController: UIViewController {
@@ -18,7 +18,7 @@ final class EpisodeViewController: UIViewController {
     // MARK: - UI Elements
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .blue
         tableView.rowHeight = UITableView.automaticDimension
         return tableView
@@ -55,18 +55,27 @@ extension EpisodeViewController: ViewConfiguration {
         title = Constants.title
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
-        tableView.register(cellClass: UITableViewCell.self)
+        tableView.register(cellClass: MyTableViewCell.self)
     }
 }
 
 // MARK: - EpisodeDisplaying
 extension EpisodeViewController: EpisodeDisplaying {
-    func display(episode: EpisodeResponse) {
-        tableViewDataSource.add(items: [episode])
+    func display(episodes: Episodes) {
+        tableViewDataSource.add(items: episodes)
         tableView.reloadData()
     }
 }
 
 // MARK: - Table View
 // Header, Footer, willDisplay, didSelectRowAt..
-extension EpisodeViewController: UITableViewDelegate { }
+extension EpisodeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let meleca = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
+        print(meleca)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? MyTableViewCell {
+            print(cell.episode)
+        }
+    }
+}
