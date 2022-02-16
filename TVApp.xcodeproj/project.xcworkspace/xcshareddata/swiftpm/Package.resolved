@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ChainedConstraints",
+        "repositoryURL": "https://github.com/adrianopaladini/ChainedConstraints",
+        "state": {
+          "branch": "main",
+          "revision": "0902311c623a14a0c1e3a6a63db6549f54552fdb",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

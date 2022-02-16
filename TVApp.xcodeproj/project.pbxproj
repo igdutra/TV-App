@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302E742A27BCA97A00FE4763 /* ChainedConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 302E742927BCA97A00FE4763 /* ChainedConstraints */; };
 		3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76127BA781500C19E44 /* AppDelegate.swift */; };
 		3076C76627BA781500C19E44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76527BA781500C19E44 /* ViewController.swift */; };
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302E742A27BCA97A00FE4763 /* ChainedConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +219,9 @@
 			dependencies = (
 			);
 			name = TVApp;
+			packageProductDependencies = (
+				302E742927BCA97A00FE4763 /* ChainedConstraints */,
+			);
 			productName = TVApp;
 			productReference = 3076C75E27BA781500C19E44 /* TVApp.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +294,9 @@
 				Base,
 			);
 			mainGroup = 3076C75527BA781500C19E44;
+			packageReferences = (
+				302E742827BCA97A00FE4763 /* XCRemoteSwiftPackageReference "ChainedConstraints" */,
+			);
 			productRefGroup = 3076C75F27BA781500C19E44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -690,6 +698,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		302E742827BCA97A00FE4763 /* XCRemoteSwiftPackageReference "ChainedConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adrianopaladini/ChainedConstraints";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		302E742927BCA97A00FE4763 /* ChainedConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 302E742827BCA97A00FE4763 /* XCRemoteSwiftPackageReference "ChainedConstraints" */;
+			productName = ChainedConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3076C75627BA781500C19E44 /* Project object */;
 }
