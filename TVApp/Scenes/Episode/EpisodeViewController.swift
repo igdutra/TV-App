@@ -1,7 +1,7 @@
 import UIKit
 
 protocol EpisodeDisplaying: AnyObject {
-    func displaySomething()
+    func reloadData()
 }
 
 final class EpisodeViewController: UIViewController {
@@ -75,8 +75,8 @@ extension EpisodeViewController: ViewConfiguration {
 
 // MARK: - EpisodeDisplaying
 extension EpisodeViewController: EpisodeDisplaying {
-    func displaySomething() { 
-        // Template
+    func reloadData() {
+        tableView.reloadData()
     }
 }
 

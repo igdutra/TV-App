@@ -2,7 +2,7 @@ import Foundation
 
 protocol EpisodePresenting: AnyObject {
     var viewController: EpisodeDisplaying? { get set }
-    func displaySomething()
+    func presentEpisode(_ episode: EpisodeResponse)
     func didNextStep(action: EpisodeAction)
 }
 
@@ -17,8 +17,8 @@ final class EpisodePresenter {
 
 // MARK: - EpisodePresenting
 extension EpisodePresenter: EpisodePresenting {
-    func displaySomething() {
-        viewController?.displaySomething()
+    func presentEpisode(_ episode: EpisodeResponse) {
+        viewController?.reloadData()
     }
     
     func didNextStep(action: EpisodeAction) {
