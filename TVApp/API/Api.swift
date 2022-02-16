@@ -21,7 +21,7 @@ class Api<Model: Decodable> {
         components.path = endpoint.path
         components.queryItems = endpoint.parameters
         
-        guard let url = components.url else { return }
+        guard let url = components.url else { return completion(.failure(.invalidURL))}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = endpoint.method
     

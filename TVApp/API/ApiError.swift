@@ -8,6 +8,7 @@
 import Foundation
 
 enum ApiError: Error {
+    case invalidURL
     case clientOrServerError(URLResponse?)
     case emptyData
     case decodeError(Error)
