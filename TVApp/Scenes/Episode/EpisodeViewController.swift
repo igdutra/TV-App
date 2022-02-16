@@ -1,4 +1,5 @@
 import UIKit
+import ChainedConstraints
 
 protocol EpisodeDisplaying: AnyObject {
     func display(episode: EpisodeResponse)
@@ -10,7 +11,7 @@ final class EpisodeViewController: UIViewController {
     private let interactor: EpisodeInteracting
     private lazy var tableViewDataSource: EpisodeDataSource = .init()
     
-    private struct Constants {
+    private enum Constants {
         static let title = "Episodes"
     }
     
@@ -35,7 +36,7 @@ final class EpisodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-        setup()
+        viewSetup()
         interactor.setup()
     }
 }
@@ -61,7 +62,7 @@ extension EpisodeViewController: ViewConfiguration {
 // MARK: - EpisodeDisplaying
 extension EpisodeViewController: EpisodeDisplaying {
     func display(episode: EpisodeResponse) {
-        tableViewDataSource.data = episode
+        tableViewDataSource.add(items: [episode])
         tableView.reloadData()
     }
 }
@@ -69,17 +70,3 @@ extension EpisodeViewController: EpisodeDisplaying {
 // MARK: - Table View
 // Header, Footer, willDisplay, didSelectRowAt..
 extension EpisodeViewController: UITableViewDelegate { }
-
-//extension EpisodeViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 3
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
-//            return UITableViewCell()
-//        }
-//        cell.textLabel?.text = "test"
-//        return cell
-//    }
-//}

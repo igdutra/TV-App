@@ -6,7 +6,7 @@
 //
 
 protocol ViewConfiguration: AnyObject {
-    func setup()
+    func viewSetup()
     func setupHierarchy()
     func setupConstraints()
     func setupConfigurations()
@@ -14,7 +14,7 @@ protocol ViewConfiguration: AnyObject {
 }
 
 extension ViewConfiguration {
-    func setup() {
+    func viewSetup() {
         setupHierarchy()
         setupConstraints()
         setupConfigurations()

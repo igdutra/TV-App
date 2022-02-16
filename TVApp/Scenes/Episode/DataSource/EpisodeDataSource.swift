@@ -8,18 +8,26 @@
 import UIKit
 
 class EpisodeDataSource: NSObject, UITableViewDataSource {
-    public var data: EpisodeResponse?
-    // TODO: append items
+    private var data: [EpisodeResponse] = []
+    
+    public func add(items: [EpisodeResponse]) {
+        data.append(contentsOf: items)
+    }
+    
+    // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
+        guard let item = data[safe: indexPath.row],
+              let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = data?.name
+        
+        cell.textLabel?.text = item.name
+        
         return cell
     }
 }
