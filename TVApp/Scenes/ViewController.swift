@@ -8,14 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private struct Constants {
+        static let title = "Episodes"
+    }
+    
+    // MARK: - Properties
+    
+    let cellId = "teste"
     
     // MARK: - UI Elements
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .blue
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
@@ -45,7 +51,7 @@ class ViewController: UIViewController {
 // MARK: - ViewConfiguration
 extension ViewController: ViewConfiguration {
     func setupHierarchy() {
-        view.addSubview(tableView)
+        view.addSubviews([tableView])
     }
     
     func setupConstraints() {
@@ -53,5 +59,27 @@ extension ViewController: ViewConfiguration {
     }
     
     func setupConfigurations() {
+        title = Constants.title
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(cellClass: UITableViewCell.self)
+    }
+}
+
+// MARK: - Table View
+// Header, Footer, willDisplay, didSelectRowAt..
+extension ViewController: UITableViewDelegate { }
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
+            return UITableViewCell()
+        }
+        cell.textLabel?.text = "test"
+        return cell
     }
 }

@@ -148,8 +148,8 @@
 		308AE08327BB285000366DF4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				30C6B1AD27BB445000ECE329 /* Models */,
 				3076C76527BA781500C19E44 /* ViewController.swift */,
+				30C6B1AD27BB445000ECE329 /* Models */,
 				30C6B1AB27BB435500ECE329 /* EpisodeService.swift */,
 			);
 			path = Scenes;
