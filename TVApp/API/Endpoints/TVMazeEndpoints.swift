@@ -8,9 +8,8 @@
 import Foundation
 
 public enum TVMazeEndpoints {
-    case showsIndex
-    case episodes
-    case episodesWithParameters
+    case shows(page: Int)
+    case showEpisodes(showId: Int)
 }
 
 extension TVMazeEndpoints: ApiEndpointProtocol {
@@ -24,20 +23,17 @@ extension TVMazeEndpoints: ApiEndpointProtocol {
     
     public var path: String {
         switch self {
-        case .showsIndex:
+        case .shows:
             return "/shows"
-        case .episodes:
-            return "/episodes/1"
-        case .episodesWithParameters:
-            return "/shows/1/episodebynumber"
+        case .showEpisodes(let showId):
+            return "/shows/\(showId)/episodes"
         }
     }
     
     public var parameters: [URLQueryItem]? {
         switch self {
-        case .episodesWithParameters:
-            return [URLQueryItem(name: "season", value: "1"),
-                    URLQueryItem(name: "number", value: "1")]
+        case .shows(let page):
+            return [URLQueryItem(name: "page", value: page.description)]
         default:
             return nil
         }

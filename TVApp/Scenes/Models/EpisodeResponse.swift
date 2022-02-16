@@ -1,6 +1,8 @@
 import Foundation
 
-struct EpisodeResponse: Decodable {
+typealias Episodes = [EpisodeResponse]
+
+struct EpisodeResponse: Decodable, Identifiable {
     let id: Int
     let url: String
     let name: String
@@ -11,7 +13,7 @@ struct EpisodeResponse: Decodable {
     let rating: Rating
     let image: Image
     let summary: String
-    let links: Links
+    let links: EpisodeLinks
 
     enum CodingKeys: String, CodingKey {
         case id, url, name, season, number, type, airdate, airtime, airstamp, runtime, rating, image, summary
@@ -19,26 +21,11 @@ struct EpisodeResponse: Decodable {
     }
 }
 
-// MARK: - Image
-struct Image: Decodable {
-    let medium, original: String
-}
-
 // MARK: - Links
-struct Links: Decodable {
+struct EpisodeLinks: Decodable {
     let linksSelf: SelfClass
 
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
     }
-}
-
-// MARK: - SelfClass
-struct SelfClass: Codable {
-    let href: String
-}
-
-// MARK: - Rating
-struct Rating: Codable {
-    let average: Double
 }

@@ -19,6 +19,8 @@
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
 		3076C76E27BA781600C19E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */; };
 		3076C77927BA781600C19E44 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C77827BA781600C19E44 /* TVAppTests.swift */; };
+		30A9D58B27BD9C03008EFA79 /* ShowsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D58A27BD9C03008EFA79 /* ShowsResponse.swift */; };
+		30A9D58D27BD9DFF008EFA79 /* CommonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D58C27BD9DFF008EFA79 /* CommonModels.swift */; };
 		30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */; };
 		30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */; };
 		30C6B1AF27BB446100ECE329 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1AE27BB446100ECE329 /* EpisodeResponse.swift */; };
@@ -63,6 +65,8 @@
 		3076C77427BA781600C19E44 /* TVAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076C77827BA781600C19E44 /* TVAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppTests.swift; sourceTree = "<group>"; };
 		3076C77E27BA781600C19E44 /* TVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30A9D58A27BD9C03008EFA79 /* ShowsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsResponse.swift; sourceTree = "<group>"; };
+		30A9D58C27BD9DFF008EFA79 /* CommonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModels.swift; sourceTree = "<group>"; };
 		30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeEndpoints.swift; sourceTree = "<group>"; };
 		30C6B1AE27BB446100ECE329 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				30C6B1AE27BB446100ECE329 /* EpisodeResponse.swift */,
+				30A9D58A27BD9C03008EFA79 /* ShowsResponse.swift */,
+				30A9D58C27BD9DFF008EFA79 /* CommonModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,10 +423,12 @@
 				30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,
 				30C6ED7D27BCC59A00EC55D2 /* EpisodeDataSource.swift in Sources */,
+				30A9D58B27BD9C03008EFA79 /* ShowsResponse.swift in Sources */,
 				30C6ED7F27BCC9A500EC55D2 /* Array.swift in Sources */,
 				302E744A27BCBB9800FE4763 /* EpisodeService.swift in Sources */,
 				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,
 				30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */,
+				30A9D58D27BD9DFF008EFA79 /* CommonModels.swift in Sources */,
 				302E744727BCBB9800FE4763 /* EpisodePresenter.swift in Sources */,
 				302E744827BCBB9800FE4763 /* EpisodeViewController.swift in Sources */,
 				302E744927BCBB9800FE4763 /* EpisodeInteractor.swift in Sources */,
