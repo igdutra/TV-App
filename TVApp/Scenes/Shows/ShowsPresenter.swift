@@ -1,9 +1,8 @@
 import Foundation
 
 protocol ShowsPresenting: AnyObject {
-    var viewController: ShowsDisplaying? { get set }
     func presentShows(_ shows: Shows)
-    func didNextStep(action: ShowsAction)
+    func presetShowDetail(_ show: Show)
 }
 
 final class ShowsPresenter {
@@ -21,7 +20,7 @@ extension ShowsPresenter: ShowsPresenting {
         viewController?.display(shows: shows)
     }
     
-    func didNextStep(action: ShowsAction) {
-        coordinator.perform(action: action)
+    func presetShowDetail(_ show: Show) {
+        
     }
 }

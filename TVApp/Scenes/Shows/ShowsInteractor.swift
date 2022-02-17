@@ -2,6 +2,7 @@ import Foundation
 
 protocol ShowsInteracting: AnyObject {
     func setup()
+    func didSelect(_ show: Show)
 }
 
 final class ShowsInteractor {
@@ -26,5 +27,9 @@ extension ShowsInteractor: ShowsInteracting {
                 print(apiError)
             }
         }
+    }
+    
+    func didSelect(_ show: Show) {
+        presenter.presetShowDetail(show)
     }
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 class ShowTableViewCell: UITableViewCell {
+    // MARK: - Properties
+    var show: Show?
     
     // MARK: - UI Elements
     
@@ -39,12 +41,6 @@ class ShowTableViewCell: UITableViewCell {
         // Improvement: This asset image could be in an script generated file, e.g. using SwiftGen
         showImageView.from(url: imagePath, placeholder: UIImage(named: "imagePlaceholder"))
     }
-
-    // TODO: remove
-//    override func prepareForReuse() {
-//        showImageView = nil
-//        titleLabel = nil
-//    }
 }
 
 // MARK: - ViewConfiguration

@@ -72,7 +72,13 @@ extension ShowsViewController: ShowsDisplaying {
 // MARK: - TableViewDelegate
 extension ShowsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let teste = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
-        print(teste)
+        if let cell = tableView.cellForRow(at: indexPath) as? ShowTableViewCell,
+           let show = cell.show {
+            interactor.didSelect(show)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // TODO: Create logic to use pagination
     }
 }

@@ -26,9 +26,9 @@ class ShowDataSource: NSObject, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.show = show
         cell.setup(title: show.name, imagePath: show.image.medium)
         
         return cell
     }
 }
-

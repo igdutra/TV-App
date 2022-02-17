@@ -4,7 +4,7 @@ enum ShowsFactory {
     static func make() -> UIViewController {
         let service: ShowsServicing = ShowsService()
         let coordinator: ShowsCoordinating = ShowsCoordinator()
-        let presenter: ShowsPresenting = ShowsPresenter(coordinator: coordinator)
+        let presenter = ShowsPresenter(coordinator: coordinator)
         let interactor = ShowsInteractor(service: service, presenter: presenter)
         let viewController = ShowsViewController(interactor: interactor)
 
