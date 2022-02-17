@@ -70,10 +70,10 @@ extension EpisodeViewController: EpisodeDisplaying {
     }
 }
 
-// MARK: - Table View
-// Header, Footer, willDisplay, didSelectRowAt..
+// MARK: - TableViewDelegate
 extension EpisodeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let teste = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
+        print(teste)
     }
 }

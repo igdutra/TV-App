@@ -9,7 +9,7 @@ final class ShowsViewController: UIViewController {
     // MARK: - Properties
     
     private let interactor: ShowsInteracting
-    private lazy var tableViewDataSource: EpisodeDataSource = .init()
+    private lazy var tableViewDataSource: ShowDataSource = .init()
     
     private enum Constants {
         // Improvement: move title to .strings file in order to localize
@@ -40,8 +40,6 @@ final class ShowsViewController: UIViewController {
         viewSetup()
         interactor.setup()
     }
-    // TODO: remove
-    var shows = Shows()
 }
 
 // MARK: - ViewConfiguration
@@ -57,8 +55,8 @@ extension ShowsViewController: ViewConfiguration {
     func setupConfigurations() {
         title = Constants.title
         view.backgroundColor = .white
-//        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = tableViewDataSource
         tableView.register(cellClass: ShowTableViewCell.self)
     }
 }
@@ -66,26 +64,15 @@ extension ShowsViewController: ViewConfiguration {
 // MARK: - ShowsDisplaying
 extension ShowsViewController: ShowsDisplaying {
     func display(shows: Shows) {
-        self.shows = shows
+        tableViewDataSource.add(items: shows)
         tableView.reloadData()
     }
 }
 
-// MARK: - Table View
-// Header, Footer, willDisplay, didSelectRowAt..
-extension ShowsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let show = shows[safe: indexPath.row],
-              let cell = tableView.dequeueReusableCell(cellClass: ShowTableViewCell.self, indexPath: indexPath) else {
-            return UITableViewCell()
-        }
-        
-        cell.setup(title: show.name, imagePath: show.image.medium)
-        
-        return cell
+// MARK: - TableViewDelegate
+extension ShowsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let teste = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
+        print(teste)
     }
 }
