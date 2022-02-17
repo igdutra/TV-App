@@ -1,5 +1,5 @@
 //
-//  ShowViewModel.swift
+//  ShowDetailsViewModel.swift
 //  TVApp
 //
 //  Created by Ivo Dutra on 16/02/22.
@@ -8,7 +8,7 @@
 import Foundation
 
 // NOTE: ViewModel: pass to ViewController only the necessary Infos
-struct ShowViewModel: Identifiable {
+struct ShowDetailsViewModel: Identifiable {
     let id: Int
     let name: String
     let image: String
@@ -17,7 +17,7 @@ struct ShowViewModel: Identifiable {
     let summary: String
 }
 
-extension ShowViewModel {
+extension ShowDetailsViewModel {
     init(from show: Show) {
         self.id = show.id
         self.name = show.name

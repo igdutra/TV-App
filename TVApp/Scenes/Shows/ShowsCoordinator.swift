@@ -1,7 +1,7 @@
 import UIKit
 
 enum ShowsAction {
-    case showDetail
+    case showDetail(Show)
 }
 
 protocol ShowsCoordinating: AnyObject {
@@ -17,8 +17,8 @@ final class ShowsCoordinator {
 extension ShowsCoordinator: ShowsCoordinating {
     func perform(action: ShowsAction) {
         switch action {
-        case .showDetail:
-            let detailController = EpisodeFactory.make()
+        case .showDetail(let show):
+            let detailController = ShowDetailsFactory.make(show: show)
             viewController?.navigationController?.pushViewController(detailController, animated: true)
         }
     }

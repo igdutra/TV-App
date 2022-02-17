@@ -1,5 +1,5 @@
 //
-//  EpisodeDataSource.swift
+//  ShowDetailsDataSource.swift
 //  TVApp
 //
 //  Created by Ivo Dutra on 16/02/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EpisodeDataSource: NSObject, UITableViewDataSource {
+class ShowDetailsDataSource: NSObject, UITableViewDataSource {
     private var data: [Int: Episodes] = [:]
     
     public func add(items: Episodes) {

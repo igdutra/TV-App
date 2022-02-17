@@ -21,6 +21,6 @@ extension ShowsPresenter: ShowsPresenting {
     }
     
     func presetShowDetail(_ show: Show) {
-        
+        coordinator.perform(action: .showDetail(show))
     }
 }
