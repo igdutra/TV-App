@@ -28,6 +28,7 @@ struct Show: Decodable, Identifiable {
     let links: ShowLinks
 
     enum CodingKeys: String, CodingKey {
+        // swiftlint:disable line_length
         case id, url, name, type, language, genres, status, runtime, averageRuntime, premiered, ended, officialSite, schedule, rating, weight, network, webChannel, dvdCountry, externals, image, summary, updated
         case links = "_links"
     }

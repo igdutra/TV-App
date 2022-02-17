@@ -12,6 +12,7 @@ final class EpisodeViewController: UIViewController {
     private lazy var tableViewDataSource: EpisodeDataSource = .init()
     
     private enum Constants {
+        // Improvement: move title to .strings file in order to localize
         static let title = "Episodes"
     }
     
