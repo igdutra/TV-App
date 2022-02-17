@@ -22,6 +22,6 @@ extension ShowDetailsPresenter: ShowDetailsPresenting {
     }
     
     func presentShowEpisodes(_ episodes: Episodes) {
-        
+        viewController?.display(episodes: episodes)
     }
 }

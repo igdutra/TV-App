@@ -22,7 +22,7 @@ final class ShowDetailsInteractor {
 extension ShowDetailsInteractor: ShowDetailsInteracting {
     func setup() {
         presenter.presentShowDetails(show)
-        service.getEpisodes { [weak self] result in
+        service.getEpisodes(showId: show.id) { [weak self] result in
             switch result {
             case .success(let episodes):
                 self?.presenter.presentShowEpisodes(episodes)

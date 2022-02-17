@@ -3,6 +3,7 @@ import ChainedConstraints
 
 protocol ShowDetailsDisplaying: AnyObject {
     func display(showDetails: ShowDetailsViewModel)
+    func display(episodes: Episodes)
 }
 
 final class ShowDetailsViewController: UIViewController {
@@ -57,6 +58,11 @@ extension ShowDetailsViewController: ViewConfiguration {
 
 // MARK: - ShowDetailsDisplaying
 extension ShowDetailsViewController: ShowDetailsDisplaying {
+    func display(episodes: Episodes) {
+        tableViewDataSource.add(items: episodes)
+        tableView.reloadData()
+    }
+    
     func display(showDetails: ShowDetailsViewModel) {
         // TODO: add missing labels and image from viewModel
         title = showDetails.name
@@ -66,7 +72,6 @@ extension ShowDetailsViewController: ShowDetailsDisplaying {
 // MARK: - TableViewDelegate
 extension ShowDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let teste = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
-        print(teste)
+        // TODO: Go to Episode Detail
     }
 }
