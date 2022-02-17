@@ -21,6 +21,10 @@ extension ViewConfiguration {
         setupAccessibility()
     }
     
+    func setupConfigurations() {
+        // Option Method
+    }
+    
     func setupAccessibility() {
         // Option Method
     }

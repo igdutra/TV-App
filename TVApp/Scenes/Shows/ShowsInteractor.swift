@@ -17,6 +17,14 @@ final class ShowsInteractor {
 // MARK: - ShowsInteracting
 extension ShowsInteractor: ShowsInteracting {
     func setup() {
-        // Template
+        service.getShows(page: 0) { [weak self] result in
+            switch result {
+            case .success(let shows):
+                self?.presenter.presentShows(shows)
+            case .failure(let apiError):
+                // Improvement: Error can be handled, a dialog displayed, etc
+                print(apiError)
+            }
+        }
     }
 }

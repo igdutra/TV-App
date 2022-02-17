@@ -19,7 +19,7 @@ struct SelfClass: Codable {
 
 // MARK: - Rating
 struct Rating: Codable {
-    let average: Double
+    let average: Double?
 }
 
 // MARK: - Externals

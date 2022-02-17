@@ -25,6 +25,8 @@ final class EpisodeViewController: UIViewController {
         return tableView
     }()
     
+    // MARK: - Init
+    
     init(interactor: EpisodeInteracting) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
@@ -56,7 +58,7 @@ extension EpisodeViewController: ViewConfiguration {
         title = Constants.title
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
-        tableView.register(cellClass: MyTableViewCell.self)
+        tableView.register(cellClass: UITableViewCell.self)
     }
 }
 
@@ -72,11 +74,6 @@ extension EpisodeViewController: EpisodeDisplaying {
 // Header, Footer, willDisplay, didSelectRowAt..
 extension EpisodeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let meleca = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
-        print(meleca)
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? MyTableViewCell {
-            print(cell.episode)
-        }
+        let teste = "S\(indexPath.section + 1) E\(indexPath.row + 1)"
     }
 }

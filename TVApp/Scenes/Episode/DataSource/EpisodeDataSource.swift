@@ -32,18 +32,13 @@ class EpisodeDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let episode = data[indexPath.section + 1]?[safe: indexPath.row],
-              let cell = tableView.dequeueReusableCell(cellClass: MyTableViewCell.self, indexPath: indexPath) else {
+              let cell = tableView.dequeueReusableCell(cellClass: UITableViewCell.self, indexPath: indexPath) else {
             return UITableViewCell()
         }
         
-        cell.episode = episode
+//        cell.episode = episode
         cell.textLabel?.text = episode.name
         
         return cell
     }
-}
-
-// TODO: remove
-class MyTableViewCell: UITableViewCell {
-    var episode: Episode?
 }

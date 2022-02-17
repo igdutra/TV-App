@@ -2,25 +2,27 @@ import Foundation
 
 typealias Shows = [Show]
 
+// NOTE: It is not clear which properties can be nil, some shows have some, some don't.
+
 // MARK: - Show
 struct Show: Decodable, Identifiable {
     let id: Int
     let url: String
     let name: String
-    let type: String
-    let language: String
+    let type: String?
+    let language: String?
     let genres: [String]
     let status: String
     let runtime: Int?
-    let averageRuntime: Int
+    let averageRuntime: Int?
     let premiered: String
     let ended: String?
     let officialSite: String?
     let schedule: Schedule
-    let rating: Rating
+    let rating: Rating?
     let weight: Int
     let network, webChannel: Network?
-    let dvdCountry: String?
+    let dvdCountry: Country?
     let externals: Externals
     let image: Image
     let summary: String
