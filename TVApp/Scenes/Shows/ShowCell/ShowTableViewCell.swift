@@ -19,7 +19,8 @@ class ShowTableViewCell: UITableViewCell {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
 
@@ -35,7 +36,15 @@ class ShowTableViewCell: UITableViewCell {
     // MARK: - Public Function
     func setup(title: String, imagePath: String) {
         titleLabel.text = title
+        // Improvement: This asset image could be in an script generated file, e.g. using SwiftGen
+        showImageView.from(url: imagePath, placeholder: UIImage(named: "imagePlaceholder"))
     }
+
+    // TODO: remove
+//    override func prepareForReuse() {
+//        showImageView = nil
+//        titleLabel = nil
+//    }
 }
 
 // MARK: - ViewConfiguration
@@ -47,12 +56,14 @@ extension ShowTableViewCell: ViewConfiguration {
     func setupConstraints() {
         showImageView
             .leadingToSuperview(8)
-//            .topToSuperview(4)
-//            .bottomToSuperview(4)
+            .aspectRatio()
+            .heightTo(200)
+            .topToSuperview(4)
+            .bottomToSuperview(4)
         
         titleLabel
-            .leadingToTrailing(of: showImageView, margin: 16)
-            .topToSuperview()
-            .bottomToSuperview()
+            .leadingToTrailing(of: showImageView, margin: 8)
+            .trailingToSuperview()
+            .centerVerticalToSuperView()
     }
 }
