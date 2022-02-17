@@ -6,7 +6,7 @@ protocol ShowEpisodesServicing {
 
 final class ShowEpisodesService: ShowEpisodesServicing {
     func getEpisodes(showId: Int, completion: @escaping (Result<Episodes, ApiError>) -> Void) {
-        let api = Api<Episodes>(endpoint: TVMazeEndpoints.showEpisodes(showId: 1))
+        let api = Api<Episodes>(endpoint: TVMazeEndpoints.showEpisodes(showId: showId))
         api.request { result in
             DispatchQueue.main.async {
                 completion(result)
