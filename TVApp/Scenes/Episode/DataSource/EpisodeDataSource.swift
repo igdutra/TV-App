@@ -43,6 +43,7 @@ class EpisodeDataSource: NSObject, UITableViewDataSource {
     }
 }
 
+// TODO: remove
 class MyTableViewCell: UITableViewCell {
-    var episode: EpisodeResponse?
+    var episode: Episode?
 }

@@ -1,8 +1,8 @@
 import Foundation
 
-typealias Episodes = [EpisodeResponse]
+typealias Episodes = [Episode]
 
-struct EpisodeResponse: Decodable, Identifiable {
+struct Episode: Decodable, Identifiable {
     let id: Int
     let url: String
     let name: String
