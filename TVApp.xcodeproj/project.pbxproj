@@ -18,7 +18,6 @@
 		3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76127BA781500C19E44 /* AppDelegate.swift */; };
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
 		3076C76E27BA781600C19E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */; };
-		3076C77927BA781600C19E44 /* TVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C77827BA781600C19E44 /* TVAppTests.swift */; };
 		30A9D58B27BD9C03008EFA79 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D58A27BD9C03008EFA79 /* Show.swift */; };
 		30A9D58D27BD9DFF008EFA79 /* CommonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D58C27BD9DFF008EFA79 /* CommonModels.swift */; };
 		30A9D59527BDCFEC008EFA79 /* ShowsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D58F27BDCFEC008EFA79 /* ShowsCoordinator.swift */; };
@@ -30,6 +29,9 @@
 		30A9D59D27BDD588008EFA79 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D59C27BDD588008EFA79 /* ShowTableViewCell.swift */; };
 		30A9D5A227BDE04B008EFA79 /* ShowDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D5A127BDE04B008EFA79 /* ShowDataSource.swift */; };
 		30A9D5A627BDE571008EFA79 /* ShowDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D5A527BDE571008EFA79 /* ShowDetailsViewModel.swift */; };
+		30A9D5A827BDF241008EFA79 /* ShowsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D5A727BDF241008EFA79 /* ShowsCoordinatorTests.swift */; };
+		30A9D5AA27BDF267008EFA79 /* NavigationViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D5A927BDF267008EFA79 /* NavigationViewControllerSpy.swift */; };
+		30A9D5AC27BDF42D008EFA79 /* Show+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9D5AB27BDF42D008EFA79 /* Show+Fixture.swift */; };
 		30C6B1A727BB3EDF00ECE329 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */; };
 		30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */; };
 		30C6B1AF27BB446100ECE329 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6B1AE27BB446100ECE329 /* Episode.swift */; };
@@ -43,13 +45,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		3076C77527BA781600C19E44 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3076C75627BA781500C19E44 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3076C75D27BA781500C19E44;
-			remoteInfo = TVApp;
-		};
-		3076C77F27BA781600C19E44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3076C75627BA781500C19E44 /* Project object */;
 			proxyType = 1;
@@ -72,8 +67,6 @@
 		3076C76D27BA781600C19E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3076C76F27BA781600C19E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3076C77427BA781600C19E44 /* TVAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3076C77827BA781600C19E44 /* TVAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAppTests.swift; sourceTree = "<group>"; };
-		3076C77E27BA781600C19E44 /* TVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A9D58A27BD9C03008EFA79 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		30A9D58C27BD9DFF008EFA79 /* CommonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModels.swift; sourceTree = "<group>"; };
 		30A9D58F27BDCFEC008EFA79 /* ShowsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCoordinator.swift; sourceTree = "<group>"; };
@@ -85,6 +78,9 @@
 		30A9D59C27BDD588008EFA79 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		30A9D5A127BDE04B008EFA79 /* ShowDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataSource.swift; sourceTree = "<group>"; };
 		30A9D5A527BDE571008EFA79 /* ShowDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewModel.swift; sourceTree = "<group>"; };
+		30A9D5A727BDF241008EFA79 /* ShowsCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCoordinatorTests.swift; sourceTree = "<group>"; };
+		30A9D5A927BDF267008EFA79 /* NavigationViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewControllerSpy.swift; sourceTree = "<group>"; };
+		30A9D5AB27BDF42D008EFA79 /* Show+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Show+Fixture.swift"; sourceTree = "<group>"; };
 		30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		30C6B1A927BB407500ECE329 /* TVMazeEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeEndpoints.swift; sourceTree = "<group>"; };
 		30C6B1AE27BB446100ECE329 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -106,13 +102,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3076C77127BA781600C19E44 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3076C77B27BA781600C19E44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,7 +147,6 @@
 			children = (
 				3076C75E27BA781500C19E44 /* TVApp.app */,
 				3076C77427BA781600C19E44 /* TVAppTests.xctest */,
-				3076C77E27BA781600C19E44 /* TVAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,7 +166,9 @@
 		3076C77727BA781600C19E44 /* TVAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				3076C77827BA781600C19E44 /* TVAppTests.swift */,
+				30A9D5A727BDF241008EFA79 /* ShowsCoordinatorTests.swift */,
+				30A9D5A927BDF267008EFA79 /* NavigationViewControllerSpy.swift */,
+				30A9D5AB27BDF42D008EFA79 /* Show+Fixture.swift */,
 			);
 			path = TVAppTests;
 			sourceTree = "<group>";
@@ -365,24 +355,6 @@
 			productReference = 3076C77427BA781600C19E44 /* TVAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3076C77D27BA781600C19E44 /* TVAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3076C78E27BA781600C19E44 /* Build configuration list for PBXNativeTarget "TVAppUITests" */;
-			buildPhases = (
-				3076C77A27BA781600C19E44 /* Sources */,
-				3076C77B27BA781600C19E44 /* Frameworks */,
-				3076C77C27BA781600C19E44 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3076C78027BA781600C19E44 /* PBXTargetDependency */,
-			);
-			name = TVAppUITests;
-			productName = TVAppUITests;
-			productReference = 3076C77E27BA781600C19E44 /* TVAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -397,10 +369,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					3076C77327BA781600C19E44 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 3076C75D27BA781500C19E44;
-					};
-					3076C77D27BA781600C19E44 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 3076C75D27BA781500C19E44;
 					};
@@ -424,7 +392,6 @@
 			targets = (
 				3076C75D27BA781500C19E44 /* TVApp */,
 				3076C77327BA781600C19E44 /* TVAppTests */,
-				3076C77D27BA781600C19E44 /* TVAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -440,13 +407,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3076C77227BA781600C19E44 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3076C77C27BA781600C19E44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -516,14 +476,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3076C77927BA781600C19E44 /* TVAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3076C77A27BA781600C19E44 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				30A9D5A827BDF241008EFA79 /* ShowsCoordinatorTests.swift in Sources */,
+				30A9D5AA27BDF267008EFA79 /* NavigationViewControllerSpy.swift in Sources */,
+				30A9D5AC27BDF42D008EFA79 /* Show+Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,11 +489,6 @@
 			isa = PBXTargetDependency;
 			target = 3076C75D27BA781500C19E44 /* TVApp */;
 			targetProxy = 3076C77527BA781600C19E44 /* PBXContainerItemProxy */;
-		};
-		3076C78027BA781600C19E44 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3076C75D27BA781500C19E44 /* TVApp */;
-			targetProxy = 3076C77F27BA781600C19E44 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -764,40 +714,6 @@
 			};
 			name = Release;
 		};
-		3076C78F27BA781600C19E44 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = challenge.TVAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TVApp;
-			};
-			name = Debug;
-		};
-		3076C79027BA781600C19E44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = challenge.TVAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TVApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -824,15 +740,6 @@
 			buildConfigurations = (
 				3076C78C27BA781600C19E44 /* Debug */,
 				3076C78D27BA781600C19E44 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3076C78E27BA781600C19E44 /* Build configuration list for PBXNativeTarget "TVAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3076C78F27BA781600C19E44 /* Debug */,
-				3076C79027BA781600C19E44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

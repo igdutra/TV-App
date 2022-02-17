@@ -1,0 +1,30 @@
+disabled_rules: 
+  - trailing_whitespace
+
+line_length:
+  - 200
+  - 300
+
+custom_rules:
+    comments_space:
+       name: "Space After Comment"
+       regex: '(^ *//\w+)'
+       message: "There should be a space after //"
+       severity: warning
+    comments_capitalized_ignore_possible_code:
+       name: "Capitalize First Word In Comment"
+       regex: "(^ +// +(?!swiftlint)[a-z]+)"
+       message: "The first word of a comment should be capitalized"
+       severity: warning
+    comments_space:
+        name: "Space After Comment"
+        regex: '(^ *//\w+)'
+        message: "There should be a space after //"
+        severity: warning
+    double_space:
+        include: "*.swift"
+        name: "Double Space"
+        regex: '([a-z,A-Z] \s+)'
+        message: "Double space between keywords"
+        match_kinds: keyword
+        severity: warning

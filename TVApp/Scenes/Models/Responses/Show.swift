@@ -27,7 +27,7 @@ struct Show: Decodable, Identifiable {
     let image: Image
     let summary: String
     let updated: Int
-    let links: ShowLinks
+    let links: ShowLinks?
 
     enum CodingKeys: String, CodingKey {
         // swiftlint:disable line_length
