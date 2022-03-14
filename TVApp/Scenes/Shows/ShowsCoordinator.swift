@@ -4,7 +4,7 @@ enum ShowsAction {
     case showDetail(Show)
 }
 
-protocol ShowsCoordinating: AnyObject {
+protocol ShowsCoordinatorProtocol: AnyObject {
     var viewController: UIViewController? { get set }
     func perform(action: ShowsAction)
 }
@@ -14,7 +14,7 @@ final class ShowsCoordinator {
 }
 
 // MARK: - ShowsCoordinating
-extension ShowsCoordinator: ShowsCoordinating {
+extension ShowsCoordinator: ShowsCoordinatorProtocol {
     func perform(action: ShowsAction) {
         switch action {
         case .showDetail(let show):

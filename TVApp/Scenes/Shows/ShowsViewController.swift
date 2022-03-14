@@ -1,14 +1,14 @@
 import UIKit
 import ChainedConstraints
 
-protocol ShowsDisplaying: AnyObject {
-    func display(shows: Shows)
+protocol ShowsViewControllerProtocol: AnyObject {
+    func displayShows()
 }
 
 final class ShowsViewController: UIViewController {
     // MARK: - Properties
     
-    private let interactor: ShowsInteracting
+    var viewModel: ShowsViewModelProtocol?
     private lazy var tableViewDataSource: ShowDataSource = .init()
     
     private enum Constants {
@@ -24,21 +24,20 @@ final class ShowsViewController: UIViewController {
         return tableView
     }()
     
-    // MARK: - Init
-    
-    init(interactor: ShowsInteracting) {
-        self.interactor = interactor
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) { nil }
+//    // MARK: - Init
+//
+//    init(interactor: ShowsInteracting) {
+//        self.interactor = interactor
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//
+//    required init?(coder: NSCoder) { nil }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
-        interactor.setup()
     }
 }
 
@@ -62,9 +61,10 @@ extension ShowsViewController: ViewConfiguration {
 }
 
 // MARK: - ShowsDisplaying
-extension ShowsViewController: ShowsDisplaying {
-    func display(shows: Shows) {
-        tableViewDataSource.add(items: shows)
+extension ShowsViewController: ShowsViewControllerProtocol {    
+    func displayShows() {
+        guard let viewModel = viewModel else { return }
+        tableViewDataSource.add(items: viewModel.shows)
         tableView.reloadData()
     }
 }
@@ -74,7 +74,7 @@ extension ShowsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? ShowTableViewCell,
            let show = cell.show {
-            interactor.didSelect(show)
+            viewModel?.didSelect(show)
         }
     }
     
