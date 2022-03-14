@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// FIXME: NAME
 // NOTE: ViewModel: pass to ViewController only the necessary Infos
 struct ShowDetailsViewModel: Identifiable {
     let id: Int

@@ -35,6 +35,10 @@ class ShowTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) { nil }
     
+    override func prepareForReuse() {
+        showImageView.image = nil
+    }
+    
     // MARK: - Public Function
     func setup(title: String, imagePath: String) {
         titleLabel.text = title
@@ -54,7 +58,7 @@ extension ShowTableViewCell: ViewConfiguration {
             .leadingToSuperview(8)
             .aspectRatio()
             .heightTo(200)
-            .topToSuperview(4)
+            .topToSuperview(4, relation: .greaterThanOrEqual) // Fix to not break contraints from cellHeight 208.5 vs 208
             .bottomToSuperview(4)
         
         titleLabel

@@ -11,6 +11,7 @@ protocol ShowsViewModelProtocol {
     var shows: Shows { get set }
     var delegate: ShowsViewControllerProtocol? { get set }
     func didSelect(_ show: Show)
+    func getMoreShows()
 }
 
 class ShowsViewModel {
@@ -18,6 +19,7 @@ class ShowsViewModel {
     private let service: ShowsServiceProtocol
     public weak var delegate: ShowsViewControllerProtocol?
     public var shows: Shows
+    public var currentPage: Int = 0
     
     init(coordinator: ShowsCoordinatorProtocol,
          service: ShowsServiceProtocol,
@@ -33,6 +35,11 @@ class ShowsViewModel {
 
 // MARK: - ShowsViewModelProtocol
 extension ShowsViewModel: ShowsViewModelProtocol {
+    func getMoreShows() {
+        currentPage += 1
+        getShows()
+    }
+    
     func didSelect(_ show: Show) {
         coordinator.perform(action: .showDetail(show))
     }
@@ -41,10 +48,10 @@ extension ShowsViewModel: ShowsViewModelProtocol {
 // MARK: - Private Methods
 private extension ShowsViewModel {
     func getShows() {
-        service.getShows(page: 0) { [weak self] result in
+        service.getShows(page: currentPage) { [weak self] result in
             switch result {
             case .success(let shows):
-                self?.shows = shows
+                self?.shows.append(contentsOf: shows)
                 self?.delegate?.displayShows()
             case .failure(let apiError):
                 // Improvement: Error can be handled, a dialog displayed, etc

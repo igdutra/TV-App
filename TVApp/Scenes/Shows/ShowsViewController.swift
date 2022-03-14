@@ -64,7 +64,7 @@ extension ShowsViewController: ViewConfiguration {
 extension ShowsViewController: ShowsViewControllerProtocol {    
     func displayShows() {
         guard let viewModel = viewModel else { return }
-        tableViewDataSource.add(items: viewModel.shows)
+        tableViewDataSource.replaceItems(with: viewModel.shows)
         tableView.reloadData()
     }
 }
@@ -79,6 +79,11 @@ extension ShowsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // TODO: Create logic to use pagination
+        guard let viewModel = viewModel else { return }
+        // 50 is an arbitrary choice to load itens before reaching the end
+        let lastItem = viewModel.shows.count - 50
+        if indexPath.row == lastItem {
+            viewModel.getMoreShows()
+        }
     }
 }

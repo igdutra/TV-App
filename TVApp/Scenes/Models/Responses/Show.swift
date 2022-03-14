@@ -7,26 +7,26 @@ typealias Shows = [Show]
 // MARK: - Show
 struct Show: Decodable, Identifiable {
     let id: Int
-    let url: String
+    let url: String?
     let name: String
     let type: String?
     let language: String?
     let genres: [String]
-    let status: String
+    let status: String?
     let runtime: Int?
     let averageRuntime: Int?
-    let premiered: String
+    let premiered: String?
     let ended: String?
     let officialSite: String?
     let schedule: Schedule
     let rating: Rating?
-    let weight: Int
+    let weight: Int?
     let network, webChannel: Network?
     let dvdCountry: Country?
-    let externals: Externals
+    let externals: Externals?
     let image: Image
     let summary: String
-    let updated: Int
+    let updated: Int?
     let links: ShowLinks?
 
     enum CodingKeys: String, CodingKey {
@@ -38,7 +38,7 @@ struct Show: Decodable, Identifiable {
 
 // MARK: - Links
 struct ShowLinks: Decodable {
-    let linksSelf, previousepisode: Nextepisode
+    let linksSelf, previousepisode: Nextepisode?
     let nextepisode: Nextepisode?
 
     enum CodingKeys: String, CodingKey {

@@ -10,8 +10,8 @@ import UIKit
 class ShowDataSource: NSObject, UITableViewDataSource {
     private var data: Shows = []
     
-    public func add(items: Shows) {
-        data.append(contentsOf: items)
+    public func replaceItems(with items: Shows) {
+        data = items
     }
     
     // MARK: - UITableViewDataSource
