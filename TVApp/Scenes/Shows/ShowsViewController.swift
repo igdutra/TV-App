@@ -24,14 +24,13 @@ final class ShowsViewController: UIViewController {
         return tableView
     }()
     
-//    // MARK: - Init
-//
-//    init(interactor: ShowsInteracting) {
-//        self.interactor = interactor
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) { nil }
+    lazy var searchController: UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.obscuresBackgroundDuringPresentation = false
+        // Improvement: move strings to .strings file in order to localize
+        search.searchBar.placeholder = "Search for your favorite show"
+        return search
+    }()
     
     // MARK: - Lifecycle
     
@@ -57,6 +56,9 @@ extension ShowsViewController: ViewConfiguration {
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
         tableView.register(cellClass: ShowTableViewCell.self)
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
@@ -85,5 +87,16 @@ extension ShowsViewController: UITableViewDelegate {
         if indexPath.row == lastItem {
             viewModel.getMoreShows()
         }
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+extension ShowsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text,
+              let viewModel = viewModel else { return }
+        let filteredShows = viewModel.getFilteredShows(name: text, isEmpty: text.isEmpty)
+        tableViewDataSource.replaceItems(with: filteredShows)
+        tableView.reloadData()
     }
 }

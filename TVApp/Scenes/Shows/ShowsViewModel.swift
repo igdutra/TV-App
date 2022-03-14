@@ -12,6 +12,7 @@ protocol ShowsViewModelProtocol {
     var delegate: ShowsViewControllerProtocol? { get set }
     func didSelect(_ show: Show)
     func getMoreShows()
+    func getFilteredShows(name: String, isEmpty: Bool) -> Shows
 }
 
 class ShowsViewModel {
@@ -35,13 +36,23 @@ class ShowsViewModel {
 
 // MARK: - ShowsViewModelProtocol
 extension ShowsViewModel: ShowsViewModelProtocol {
+    func didSelect(_ show: Show) {
+        coordinator.perform(action: .showDetail(show))
+    }
+    
     func getMoreShows() {
         currentPage += 1
         getShows()
     }
     
-    func didSelect(_ show: Show) {
-        coordinator.perform(action: .showDetail(show))
+    func getFilteredShows(name: String, isEmpty: Bool) -> Shows {
+        if isEmpty {
+            return shows
+        } else {
+            return shows.filter { show in
+                return show.name.lowercased().contains(name.lowercased())
+            }
+        }
     }
 }
 
