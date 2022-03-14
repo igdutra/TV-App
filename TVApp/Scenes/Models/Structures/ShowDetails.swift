@@ -6,9 +6,8 @@
 //
 
 import Foundation
-// FIXME: NAME
-// NOTE: ViewModel: pass to ViewController only the necessary Infos
-struct ShowDetailsViewModel: Identifiable {
+
+struct ShowDetails: Identifiable {
     let id: Int
     let name: String
     let image: String
@@ -17,7 +16,7 @@ struct ShowDetailsViewModel: Identifiable {
     let summary: String
 }
 
-extension ShowDetailsViewModel {
+extension ShowDetails {
     init(from show: Show) {
         self.id = show.id
         self.name = show.name

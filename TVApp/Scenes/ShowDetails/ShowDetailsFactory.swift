@@ -2,15 +2,18 @@ import UIKit
 
 enum ShowDetailsFactory {
     static func make(show: Show) -> UIViewController {
-        let service: ShowEpisodesServicing = ShowEpisodesService()
-        let coordinator: ShowDetailsCoordinating = ShowDetailsCoordinator()
-        let presenter = ShowDetailsPresenter(coordinator: coordinator)
-        let interactor = ShowDetailsInteractor(show: show, service: service, presenter: presenter)
-        let viewController = ShowDetailsViewController(interactor: interactor)
-
+        // NOTE: Identify the type speeds up the Compilation Time
+        let coordinator: ShowDetailsCoordinatorProtocol = ShowDetailsCoordinator()
+        let service: ShowEpisodesServiceProtocol = ShowEpisodesService()
+        let viewController = ShowDetailsViewController()
+        let viewModel: ShowDetailsViewModelProtocol = ShowDetailsViewModel(currentShow: show,
+                                                                           coordinator: coordinator,
+                                                                           service: service,
+                                                                           delegate: viewController)
+        
+        viewController.viewModel = viewModel
         coordinator.viewController = viewController
-        presenter.viewController = viewController
-
+        
         return viewController
     }
 }

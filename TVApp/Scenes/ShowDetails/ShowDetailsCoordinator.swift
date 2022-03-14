@@ -4,7 +4,7 @@ enum ShowDetailsAction {
     // Template
 }
 
-protocol ShowDetailsCoordinating: AnyObject {
+protocol ShowDetailsCoordinatorProtocol: AnyObject {
     var viewController: UIViewController? { get set }
     func perform(action: ShowDetailsAction)
 }
@@ -14,7 +14,7 @@ final class ShowDetailsCoordinator {
 }
 
 // MARK: - EpisodeCoordinating
-extension ShowDetailsCoordinator: ShowDetailsCoordinating {
+extension ShowDetailsCoordinator: ShowDetailsCoordinatorProtocol {
     func perform(action: ShowDetailsAction) {
         // Template
     }

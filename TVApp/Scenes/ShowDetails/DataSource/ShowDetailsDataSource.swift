@@ -12,11 +12,10 @@ class ShowDetailsDataSource: NSObject, UITableViewDataSource {
     
     public func add(items: Episodes) {
         data = Dictionary(grouping: items) { $0.season }
-        
-        print(data)
     }
     
     private enum Constants {
+        // Improvement: move strings to .strings file in order to localize
         static let season = "Season "
     }
     

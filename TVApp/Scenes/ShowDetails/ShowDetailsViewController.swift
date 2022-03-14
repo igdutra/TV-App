@@ -1,15 +1,15 @@
 import UIKit
 import ChainedConstraints
 
-protocol ShowDetailsDisplaying: AnyObject {
-    func display(showDetails: ShowDetailsViewModel)
+protocol ShowDetailsViewControllerProtocol: AnyObject {
+    func display(showDetails: ShowDetails)
     func display(episodes: Episodes)
 }
 
 final class ShowDetailsViewController: UIViewController {
     // MARK: - Properties
     
-    private let interactor: ShowDetailsInteracting
+    var viewModel: ShowDetailsViewModelProtocol?
     private lazy var tableViewDataSource: ShowDetailsDataSource = .init()
     
     // MARK: - UI Elements
@@ -20,22 +20,12 @@ final class ShowDetailsViewController: UIViewController {
         return tableView
     }()
     
-    // MARK: - Init
-    
-    init(interactor: ShowDetailsInteracting) {
-        self.interactor = interactor
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) { nil }
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         viewSetup()
-        interactor.setup()
     }
 }
 
@@ -57,13 +47,13 @@ extension ShowDetailsViewController: ViewConfiguration {
 }
 
 // MARK: - ShowDetailsDisplaying
-extension ShowDetailsViewController: ShowDetailsDisplaying {
+extension ShowDetailsViewController: ShowDetailsViewControllerProtocol {
     func display(episodes: Episodes) {
         tableViewDataSource.add(items: episodes)
         tableView.reloadData()
     }
     
-    func display(showDetails: ShowDetailsViewModel) {
+    func display(showDetails: ShowDetails) {
         // TODO: add missing labels and image from viewModel
         title = showDetails.name
     }
