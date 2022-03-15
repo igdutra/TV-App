@@ -15,6 +15,7 @@
 		302E744A27BCBB9800FE4763 /* ShowEpisodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E744427BCBB9800FE4763 /* ShowEpisodesService.swift */; };
 		304F644D27DF50F800FFA58E /* ShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304F644C27DF50F800FFA58E /* ShowsViewModel.swift */; };
 		304F644F27DFAA4200FFA58E /* ShowDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304F644E27DFAA4200FFA58E /* ShowDetailsViewModel.swift */; };
+		3050EF6D27E0B24300FD6DAE /* ShowDetailsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050EF6C27E0B24300FD6DAE /* ShowDetailsTableViewHeader.swift */; };
 		3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076C76127BA781500C19E44 /* AppDelegate.swift */; };
 		3076C76B27BA781600C19E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76A27BA781600C19E44 /* Assets.xcassets */; };
 		3076C76E27BA781600C19E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */; };
@@ -59,6 +60,7 @@
 		302E744427BCBB9800FE4763 /* ShowEpisodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEpisodesService.swift; sourceTree = "<group>"; };
 		304F644C27DF50F800FFA58E /* ShowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsViewModel.swift; sourceTree = "<group>"; };
 		304F644E27DFAA4200FFA58E /* ShowDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewModel.swift; sourceTree = "<group>"; };
+		3050EF6C27E0B24300FD6DAE /* ShowDetailsTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailsTableViewHeader.swift; sourceTree = "<group>"; };
 		3076C75E27BA781500C19E44 /* TVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3076C76127BA781500C19E44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3076C76A27BA781600C19E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				30C6ED7B27BCC56900EC55D2 /* DataSource */,
+				3050EF6B27E0B23700FD6DAE /* Header */,
 				302E744227BCBB9800FE4763 /* ShowDetailsViewController.swift */,
 				304F644E27DFAA4200FFA58E /* ShowDetailsViewModel.swift */,
 				302E743F27BCBB9800FE4763 /* ShowDetailsCoordinator.swift */,
@@ -126,6 +129,14 @@
 				302E744427BCBB9800FE4763 /* ShowEpisodesService.swift */,
 			);
 			path = ShowDetails;
+			sourceTree = "<group>";
+		};
+		3050EF6B27E0B23700FD6DAE /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				3050EF6C27E0B24300FD6DAE /* ShowDetailsTableViewHeader.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		3076C75527BA781500C19E44 = {
@@ -478,6 +489,7 @@
 				302E744A27BCBB9800FE4763 /* ShowEpisodesService.swift in Sources */,
 				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,
 				30A9D59527BDCFEC008EFA79 /* ShowsCoordinator.swift in Sources */,
+				3050EF6D27E0B24300FD6DAE /* ShowDetailsTableViewHeader.swift in Sources */,
 				30A9D59627BDCFEC008EFA79 /* ShowsFactory.swift in Sources */,
 				30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */,
 				30A9D58D27BD9DFF008EFA79 /* CommonModels.swift in Sources */,

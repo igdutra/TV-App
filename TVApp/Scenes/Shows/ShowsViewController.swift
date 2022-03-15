@@ -43,6 +43,7 @@ final class ShowsViewController: UIViewController {
 // MARK: - ViewConfiguration
 extension ShowsViewController: ViewConfiguration {
     func setupHierarchy() {
+        // Set translatesAutoresizingMaskIntoConstraints automatically
         view.addSubviews([tableView])
     }
     

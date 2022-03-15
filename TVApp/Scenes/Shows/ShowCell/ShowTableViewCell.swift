@@ -57,7 +57,7 @@ extension ShowTableViewCell: ViewConfiguration {
         showImageView
             .leadingToSuperview(8)
             .aspectRatio()
-            .heightTo(200)
+            .heightTo(100)
             .topToSuperview(4, relation: .greaterThanOrEqual) // Fix to not break contraints from cellHeight 208.5 vs 208
             .bottomToSuperview(4)
         
