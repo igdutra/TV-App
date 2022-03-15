@@ -12,6 +12,7 @@ class ShowDetailsTableViewHeader: UIView {
     
     private lazy var showImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -26,7 +27,8 @@ class ShowDetailsTableViewHeader: UIView {
     // MARK: - Init
     
     init(details: ShowDetails) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 500))
+//        super.init(frame: CGRect(x: 0, y: 0, width: 100, height: 500))
+        super.init(frame: .zero)
         viewSetup()
         setup(with: details)
         backgroundColor = .red

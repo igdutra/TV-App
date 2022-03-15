@@ -27,6 +27,19 @@ final class ShowDetailsViewController: UIViewController {
         view.backgroundColor = .white
         viewSetup()
     }
+    
+    // UITableViewHeader dynamic height
+    override func viewDidLayoutSubviews() {
+        guard let headerView = tableView.tableHeaderView else { return }
+        
+        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        
+        if headerView.frame.size.height != size.height {
+            headerView.frame.size.height = size.height
+            // Trigger new layout only when height changes
+            tableView.tableHeaderView = headerView
+        }
+    }
 }
 
 // MARK: - ViewConfiguration
