@@ -119,10 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				30C6ED7B27BCC56900EC55D2 /* DataSource */,
-				302E743F27BCBB9800FE4763 /* ShowDetailsCoordinator.swift */,
-				302E744027BCBB9800FE4763 /* ShowDetailsFactory.swift */,
 				302E744227BCBB9800FE4763 /* ShowDetailsViewController.swift */,
 				304F644E27DFAA4200FFA58E /* ShowDetailsViewModel.swift */,
+				302E743F27BCBB9800FE4763 /* ShowDetailsCoordinator.swift */,
+				302E744027BCBB9800FE4763 /* ShowDetailsFactory.swift */,
 				302E744427BCBB9800FE4763 /* ShowEpisodesService.swift */,
 			);
 			path = ShowDetails;
@@ -201,10 +201,10 @@
 			children = (
 				30A9D5A027BDE02D008EFA79 /* DataSource */,
 				30A9D59B27BDD56C008EFA79 /* ShowCell */,
-				30A9D58F27BDCFEC008EFA79 /* ShowsCoordinator.swift */,
-				304F644C27DF50F800FFA58E /* ShowsViewModel.swift */,
-				30A9D59027BDCFEC008EFA79 /* ShowsFactory.swift */,
 				30A9D59227BDCFEC008EFA79 /* ShowsViewController.swift */,
+				304F644C27DF50F800FFA58E /* ShowsViewModel.swift */,
+				30A9D58F27BDCFEC008EFA79 /* ShowsCoordinator.swift */,
+				30A9D59027BDCFEC008EFA79 /* ShowsFactory.swift */,
 				30A9D59427BDCFEC008EFA79 /* ShowsService.swift */,
 			);
 			path = Shows;
