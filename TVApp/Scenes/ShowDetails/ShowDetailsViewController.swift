@@ -49,8 +49,7 @@ extension ShowDetailsViewController: ViewConfiguration {
     }
     
     func setupConstraints() {
-        tableView
-            .edgesToSuperView()
+        tableView.edgesToSuperView()
     }
     
     func setupConfigurations() {
