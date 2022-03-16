@@ -19,6 +19,10 @@ final class ShowDetailsViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
+//
+//    lazy var headerView: UIView = {
+//
+//    }()
     
     // MARK: - Lifecycle
     
@@ -30,15 +34,7 @@ final class ShowDetailsViewController: UIViewController {
     
     // UITableViewHeader dynamic height
     override func viewDidLayoutSubviews() {
-        guard let headerView = tableView.tableHeaderView else { return }
-        
-        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        
-        if headerView.frame.size.height != size.height {
-            headerView.frame.size.height = size.height
-            // Trigger new layout only when height changes
-            tableView.tableHeaderView = headerView
-        }
+        updateViewHeight()
     }
 }
 
@@ -76,5 +72,23 @@ extension ShowDetailsViewController: ShowDetailsViewControllerProtocol {
 extension ShowDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Go to Episode Detail
+    }
+}
+
+// MARK: - Private Methods
+private extension ShowDetailsViewController {
+    func updateViewHeight() {
+        guard let headerView = tableView.tableHeaderView else { return }
+        
+//        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        
+//        if headerView.frame.size.height != size.height {
+//            headerView.frame.size.height = size.height
+//            headerView.frame.size.width =
+            // Trigger new layout only when height changes
+            tableView.tableHeaderView = headerView
+//        }
+        
+        headerView.widthToSuperview()
     }
 }

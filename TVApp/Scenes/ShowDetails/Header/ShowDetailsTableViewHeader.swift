@@ -24,8 +24,12 @@ class ShowDetailsTableViewHeader: UIView {
         return label
     }()
     
-    lazy var genreLabel: UILabel = .init()
-    
+    lazy var genreLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
+        
     lazy var scheduleTitle: UILabel = {
         let label = UILabel()
         label.text = "Schedule"
@@ -33,7 +37,11 @@ class ShowDetailsTableViewHeader: UIView {
         return label
     }()
     
-    lazy var scheduleLabel: UILabel = .init()
+    lazy var scheduleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
     
     lazy var summaryTitle: UILabel = {
         let label = UILabel()
@@ -42,7 +50,11 @@ class ShowDetailsTableViewHeader: UIView {
         return label
     }()
     
-    lazy var summaryLabel: UILabel = .init()
+    lazy var summaryLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
     
     lazy var tableViewTitle: UILabel = {
         let label = UILabel()
@@ -67,7 +79,6 @@ class ShowDetailsTableViewHeader: UIView {
         genreLabel.text = details.genres.joined(separator: ", ")
         scheduleLabel.text = details.days.joined(separator: ", ") // FIXME: aqui
         summaryLabel.text = details.summary
-        
     }
 }
 
@@ -85,8 +96,10 @@ extension ShowDetailsTableViewHeader: ViewConfiguration {
     }
     
     func setupConstraints() {
-        let leadingSpacing: CGFloat = 4
+        translatesAutoresizingMaskIntoConstraints = false
+        let leadingSpacing: CGFloat = 12
         let verticalSpacing: CGFloat = 8
+        let verticalPlusSpacing: CGFloat = 16
         
         showImageView
             .topToSuperview(4)
@@ -94,32 +107,32 @@ extension ShowDetailsTableViewHeader: ViewConfiguration {
             .heightTo(200)
         
         genreTitle
-            .topToBottom(of: showImageView, margin: verticalSpacing)
+            .topToBottom(of: showImageView, margin: verticalPlusSpacing)
             .leadingToSuperview(leadingSpacing)
         
         genreLabel
             .topToBottom(of: genreTitle, margin: verticalSpacing)
-            .horizontalToSuperview()
+            .horizontalToSuperview(leadingSpacing)
         
         scheduleTitle
-            .topToBottom(of: genreLabel, margin: verticalSpacing)
+            .topToBottom(of: genreLabel, margin: verticalPlusSpacing)
             .leadingToSuperview(leadingSpacing)
         
         scheduleLabel
             .topToBottom(of: scheduleTitle, margin: verticalSpacing)
-            .horizontalToSuperview()
+            .horizontalToSuperview(leadingSpacing)
         
         summaryTitle
-            .topToBottom(of: scheduleLabel, margin: verticalSpacing)
+            .topToBottom(of: scheduleLabel, margin: verticalPlusSpacing)
             .leadingToSuperview(leadingSpacing)
         
         summaryLabel
             .topToBottom(of: summaryTitle, margin: verticalSpacing)
-            .horizontalToSuperview()
+            .horizontalToSuperview(leadingSpacing)
         
         tableViewTitle
-            .topToBottom(of: summaryLabel, margin: verticalSpacing)
-            .bottomToSuperview()
+            .topToBottom(of: summaryLabel, margin: verticalPlusSpacing)
             .leadingToSuperview(leadingSpacing)
+            .bottomToSuperview()
     }
 }
