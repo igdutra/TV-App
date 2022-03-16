@@ -19,10 +19,8 @@ final class ShowDetailsViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
-//
-//    lazy var headerView: UIView = {
-//
-//    }()
+
+    lazy var headerView: ShowDetailsTableViewHeader = .init()
     
     // MARK: - Lifecycle
     
@@ -32,9 +30,9 @@ final class ShowDetailsViewController: UIViewController {
         viewSetup()
     }
     
-    // UITableViewHeader dynamic height
     override func viewDidLayoutSubviews() {
-        updateViewHeight()
+        // Header View Needs Constraints
+        headerView.widthToSuperview()
     }
 }
 
@@ -52,6 +50,7 @@ extension ShowDetailsViewController: ViewConfiguration {
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
         tableView.register(cellClass: UITableViewCell.self)
+        tableView.tableHeaderView = headerView
     }
 }
 
@@ -64,7 +63,7 @@ extension ShowDetailsViewController: ShowDetailsViewControllerProtocol {
     
     func display(showDetails: ShowDetails) {
         title = showDetails.name
-        tableView.tableHeaderView = ShowDetailsTableViewHeader(details: showDetails)
+        headerView.setup(with: showDetails)
     }
 }
 
@@ -72,23 +71,5 @@ extension ShowDetailsViewController: ShowDetailsViewControllerProtocol {
 extension ShowDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Go to Episode Detail
-    }
-}
-
-// MARK: - Private Methods
-private extension ShowDetailsViewController {
-    func updateViewHeight() {
-        guard let headerView = tableView.tableHeaderView else { return }
-        
-//        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        
-//        if headerView.frame.size.height != size.height {
-//            headerView.frame.size.height = size.height
-//            headerView.frame.size.width =
-            // Trigger new layout only when height changes
-            tableView.tableHeaderView = headerView
-//        }
-        
-        headerView.widthToSuperview()
     }
 }

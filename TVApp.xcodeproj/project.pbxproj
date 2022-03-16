@@ -40,6 +40,7 @@
 		30C6ED7D27BCC59A00EC55D2 /* ShowDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6ED7C27BCC59A00EC55D2 /* ShowDetailsDataSource.swift */; };
 		30C6ED7F27BCC9A500EC55D2 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6ED7E27BCC9A500EC55D2 /* Array.swift */; };
 		30C6ED8127BCCA3300EC55D2 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6ED8027BCCA3300EC55D2 /* UITableView.swift */; };
+		30E081B027E29EF50094BD5B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081AF27E29EF50094BD5B /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		30C6ED7C27BCC59A00EC55D2 /* ShowDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsDataSource.swift; sourceTree = "<group>"; };
 		30C6ED7E27BCC9A500EC55D2 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		30C6ED8027BCCA3300EC55D2 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		30E081AF27E29EF50094BD5B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				30C6ED8027BCCA3300EC55D2 /* UITableView.swift */,
+				30E081AF27E29EF50094BD5B /* String.swift */,
 				30C6B1A627BB3EDF00ECE329 /* UIImageView.swift */,
 				30C6ED7E27BCC9A500EC55D2 /* Array.swift */,
 			);
@@ -488,6 +491,7 @@
 				30C6ED7F27BCC9A500EC55D2 /* Array.swift in Sources */,
 				302E744A27BCBB9800FE4763 /* ShowEpisodesService.swift in Sources */,
 				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,
+				30E081B027E29EF50094BD5B /* String.swift in Sources */,
 				30A9D59527BDCFEC008EFA79 /* ShowsCoordinator.swift in Sources */,
 				3050EF6D27E0B24300FD6DAE /* ShowDetailsTableViewHeader.swift in Sources */,
 				30A9D59627BDCFEC008EFA79 /* ShowsFactory.swift in Sources */,

@@ -65,10 +65,9 @@ class ShowDetailsTableViewHeader: UIView {
 
     // MARK: - Init
     
-    init(details: ShowDetails) {
+    init() {
         super.init(frame: .zero)
         viewSetup()
-        setup(with: details)
     }
     
     required init?(coder: NSCoder) { nil }
@@ -78,7 +77,7 @@ class ShowDetailsTableViewHeader: UIView {
         showImageView.from(url: details.image, placeholder: UIImage(named: "imagePlaceholder"))
         genreLabel.text = details.genres.joined(separator: ", ")
         scheduleLabel.text = details.days.joined(separator: ", ") // FIXME: aqui
-        summaryLabel.text = details.summary
+        summaryLabel.attributedText = details.summary.htmlAttributed()
     }
 }
 
@@ -131,7 +130,7 @@ extension ShowDetailsTableViewHeader: ViewConfiguration {
             .horizontalToSuperview(leadingSpacing)
         
         tableViewTitle
-            .topToBottom(of: summaryLabel, margin: verticalPlusSpacing)
+            .topToBottom(of: summaryLabel)
             .leadingToSuperview(leadingSpacing)
             .bottomToSuperview()
     }
