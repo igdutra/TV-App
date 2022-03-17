@@ -11,9 +11,9 @@ struct ShowDetails: Identifiable {
     let id: Int
     let name: String
     let image: String
-    let days: [String]
-    let genres: [String]
-    let summary: String
+    let schedule: String
+    let genres: String
+    let summary: NSAttributedString
 }
 
 extension ShowDetails {
@@ -21,8 +21,8 @@ extension ShowDetails {
         self.id = show.id
         self.name = show.name
         self.image = show.image.medium
-        self.days = show.schedule.days
-        self.genres = show.genres
-        self.summary = show.summary
+        self.schedule = show.schedule.days.joined(separator: ", ") + " " + (show.schedule.time ?? .init())
+        self.genres = show.genres.joined(separator: ", ")
+        self.summary = show.summary.htmlAttributed() ?? show.summary.withoutHtmlTags
     }
 }

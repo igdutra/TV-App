@@ -42,7 +42,7 @@ class ShowDetailsDataSource: NSObject, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        // Improvement/TODO: create custom UITableViewCell and pass episode to it
+        // Improvement create custom UITableViewCell and pass episode to it
         cell.textLabel?.text = episode.name
         
         return cell

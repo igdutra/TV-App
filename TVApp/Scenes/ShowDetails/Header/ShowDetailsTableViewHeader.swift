@@ -75,9 +75,9 @@ class ShowDetailsTableViewHeader: UIView {
     // MARK: - Public Function
     func setup(with details: ShowDetails) {
         showImageView.from(url: details.image, placeholder: UIImage(named: "imagePlaceholder"))
-        genreLabel.text = details.genres.joined(separator: ", ")
-        scheduleLabel.text = details.days.joined(separator: ", ") // FIXME: aqui
-        summaryLabel.attributedText = details.summary.htmlAttributed()
+        genreLabel.text = details.genres
+        scheduleLabel.text = details.schedule
+        summaryLabel.attributedText = details.summary
     }
 }
 

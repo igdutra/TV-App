@@ -8,8 +8,8 @@
 import UIKit
 
 extension String {
-    var withoutHtmlTags: String {
-        return replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    var withoutHtmlTags: NSAttributedString {
+        return NSAttributedString(string: replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil))
     }
     
     func htmlAttributed(size: CGFloat = 17, color: String? = nil, weight: String? = nil) -> NSAttributedString? {
