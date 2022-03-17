@@ -20,6 +20,8 @@ class EpisodeDetailsViewModel {
          delegate: EpisodeDetailsViewControllerProtocol) {
         self.episode = episode
         self.delegate = delegate
+        
+        setup()
     }
 }
 
@@ -30,5 +32,8 @@ extension EpisodeDetailsViewModel: EpisodeDetailsViewModelProtocol {
 
 // MARK: - Private Methods
 private extension EpisodeDetailsViewModel {
-    // Template
+    func setup() {
+        let details = EpisodeDetails(from: episode)
+        delegate?.display(episode: details)
+    }
 }

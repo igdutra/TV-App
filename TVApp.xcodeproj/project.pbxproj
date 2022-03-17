@@ -44,6 +44,7 @@
 		30E081B327E2BD710094BD5B /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081B227E2BD710094BD5B /* EpisodeDetailsViewController.swift */; };
 		30E081B527E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081B427E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift */; };
 		30E081B727E2BD870094BD5B /* EpisodeDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081B627E2BD870094BD5B /* EpisodeDetailsFactory.swift */; };
+		30E081BC27E2C8FD0094BD5B /* EpisodeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081BB27E2C8FD0094BD5B /* EpisodeDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		30E081B227E2BD710094BD5B /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
 		30E081B427E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
 		30E081B627E2BD870094BD5B /* EpisodeDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsFactory.swift; sourceTree = "<group>"; };
+		30E081BB27E2C8FD0094BD5B /* EpisodeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				30A9D5A527BDE571008EFA79 /* ShowDetails.swift */,
+				30E081BB27E2C8FD0094BD5B /* EpisodeDetails.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				304F644F27DFAA4200FFA58E /* ShowDetailsViewModel.swift in Sources */,
 				30E081B727E2BD870094BD5B /* EpisodeDetailsFactory.swift in Sources */,
 				304F644D27DF50F800FFA58E /* ShowsViewModel.swift in Sources */,
+				30E081BC27E2C8FD0094BD5B /* EpisodeDetails.swift in Sources */,
 				30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
