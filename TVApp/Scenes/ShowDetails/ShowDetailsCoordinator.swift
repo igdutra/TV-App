@@ -1,7 +1,7 @@
 import UIKit
 
 enum ShowDetailsAction {
-    // Template
+    case episode(_ episode: Episode)
 }
 
 protocol ShowDetailsCoordinatorProtocol: AnyObject {
@@ -16,6 +16,10 @@ final class ShowDetailsCoordinator {
 // MARK: - EpisodeCoordinating
 extension ShowDetailsCoordinator: ShowDetailsCoordinatorProtocol {
     func perform(action: ShowDetailsAction) {
-        // Template
+        switch action {
+        case .episode(let episode):
+            let controller = EpisodeDetailsFactory.make(episode: episode)
+            viewController?.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 protocol ShowDetailsViewModelProtocol {
     var episodes: Episodes { get set }
     var delegate: ShowDetailsViewControllerProtocol? { get set }
+    func didSelect(_ episode: Episode)
 }
 
 class ShowDetailsViewModel {
@@ -35,7 +36,9 @@ class ShowDetailsViewModel {
 
 // MARK: - ShowsViewModelProtocol
 extension ShowDetailsViewModel: ShowDetailsViewModelProtocol {
-    // Template
+    func didSelect(_ episode: Episode) {
+        coordinator.perform(action: .episode(episode))
+    }
 }
 
 // MARK: - Private Methods

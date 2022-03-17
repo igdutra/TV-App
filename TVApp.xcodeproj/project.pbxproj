@@ -41,6 +41,9 @@
 		30C6ED7F27BCC9A500EC55D2 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6ED7E27BCC9A500EC55D2 /* Array.swift */; };
 		30C6ED8127BCCA3300EC55D2 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6ED8027BCCA3300EC55D2 /* UITableView.swift */; };
 		30E081B027E29EF50094BD5B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081AF27E29EF50094BD5B /* String.swift */; };
+		30E081B327E2BD710094BD5B /* EpisodeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081B227E2BD710094BD5B /* EpisodeDetailsViewController.swift */; };
+		30E081B527E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081B427E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift */; };
+		30E081B727E2BD870094BD5B /* EpisodeDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E081B627E2BD870094BD5B /* EpisodeDetailsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		30C6ED7E27BCC9A500EC55D2 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		30C6ED8027BCCA3300EC55D2 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		30E081AF27E29EF50094BD5B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		30E081B227E2BD710094BD5B /* EpisodeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewController.swift; sourceTree = "<group>"; };
+		30E081B427E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
+		30E081B627E2BD870094BD5B /* EpisodeDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,7 @@
 			children = (
 				30A9D58E27BDCFA5008EFA79 /* Shows */,
 				302E743E27BCBB6B00FE4763 /* ShowDetails */,
+				30E081B127E2BD5A0094BD5B /* EpisodeDetails */,
 				30C6B1AD27BB445000ECE329 /* Models */,
 			);
 			path = Scenes;
@@ -345,6 +352,16 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		30E081B127E2BD5A0094BD5B /* EpisodeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				30E081B227E2BD710094BD5B /* EpisodeDetailsViewController.swift */,
+				30E081B427E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift */,
+				30E081B627E2BD870094BD5B /* EpisodeDetailsFactory.swift */,
+			);
+			path = EpisodeDetails;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +507,7 @@
 				30A9D58B27BD9C03008EFA79 /* Show.swift in Sources */,
 				30C6ED7F27BCC9A500EC55D2 /* Array.swift in Sources */,
 				302E744A27BCBB9800FE4763 /* ShowEpisodesService.swift in Sources */,
+				30E081B327E2BD710094BD5B /* EpisodeDetailsViewController.swift in Sources */,
 				30C6B1B427BBC5D800ECE329 /* Api.swift in Sources */,
 				30E081B027E29EF50094BD5B /* String.swift in Sources */,
 				30A9D59527BDCFEC008EFA79 /* ShowsCoordinator.swift in Sources */,
@@ -497,8 +515,10 @@
 				30A9D59627BDCFEC008EFA79 /* ShowsFactory.swift in Sources */,
 				30C6B1B627BBC67C00ECE329 /* ApiEndpointProtocol.swift in Sources */,
 				30A9D58D27BD9DFF008EFA79 /* CommonModels.swift in Sources */,
+				30E081B527E2BD7D0094BD5B /* EpisodeDetailsViewModel.swift in Sources */,
 				302E744827BCBB9800FE4763 /* ShowDetailsViewController.swift in Sources */,
 				304F644F27DFAA4200FFA58E /* ShowDetailsViewModel.swift in Sources */,
+				30E081B727E2BD870094BD5B /* EpisodeDetailsFactory.swift in Sources */,
 				304F644D27DF50F800FFA58E /* ShowsViewModel.swift in Sources */,
 				30C6B1AA27BB407500ECE329 /* TVMazeEndpoints.swift in Sources */,
 			);

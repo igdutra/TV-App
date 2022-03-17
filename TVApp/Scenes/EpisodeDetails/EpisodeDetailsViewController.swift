@@ -1,15 +1,21 @@
+//
+//  EpisodeDetailsViewController.swift
+//  TVApp
+//
+//  Created by Ivo Dutra on 16/03/22.
+//
+
 import UIKit
 import ChainedConstraints
 
-protocol ShowDetailsViewControllerProtocol: AnyObject {
-    func display(showDetails: ShowDetails)
-    func display(episodes: Episodes)
+protocol EpisodeDetailsViewControllerProtocol: AnyObject {
+    // Template
 }
 
-final class ShowDetailsViewController: UIViewController {
+final class EpisodeDetailsViewController: UIViewController {
     // MARK: - Properties
     
-    var viewModel: ShowDetailsViewModelProtocol?
+    var viewModel: EpisodeDetailsViewModelProtocol?
     private lazy var tableViewDataSource: ShowDetailsDataSource = .init()
     
     // MARK: - UI Elements
@@ -26,7 +32,7 @@ final class ShowDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .red
         viewSetup()
     }
     
@@ -37,13 +43,13 @@ final class ShowDetailsViewController: UIViewController {
 }
 
 // MARK: - ViewConfiguration
-extension ShowDetailsViewController: ViewConfiguration {
+extension EpisodeDetailsViewController: ViewConfiguration {
     func setupHierarchy() {
-        view.addSubviews([tableView])
+//        view.addSubviews([tableView])
     }
     
     func setupConstraints() {
-        tableView.edgesToSuperView()
+//        tableView.edgesToSuperView()
     }
     
     func setupConfigurations() {
@@ -55,23 +61,11 @@ extension ShowDetailsViewController: ViewConfiguration {
 }
 
 // MARK: - ShowDetailsDisplaying
-extension ShowDetailsViewController: ShowDetailsViewControllerProtocol {
-    func display(episodes: Episodes) {
-        tableViewDataSource.add(items: episodes)
-        tableView.reloadData()
-    }
-    
-    func display(showDetails: ShowDetails) {
-        title = showDetails.name
-        headerView.setup(with: showDetails)
-    }
+extension EpisodeDetailsViewController: EpisodeDetailsViewControllerProtocol {
+    // Template
 }
 
 // MARK: - TableViewDelegate
-extension ShowDetailsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let episode = tableViewDataSource.getEpisode(at: indexPath) {
-            viewModel?.didSelect(episode)
-        }
-    }
+extension EpisodeDetailsViewController: UITableViewDelegate {
+    // Template
 }

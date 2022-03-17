@@ -14,6 +14,10 @@ class ShowDetailsDataSource: NSObject, UITableViewDataSource {
         data = Dictionary(grouping: items) { $0.season }
     }
     
+    public func getEpisode(at path: IndexPath) -> Episode? {
+        data[path.section + 1]?[path.row] 
+    }
+    
     private enum Constants {
         // Improvement: move strings to .strings file in order to localize
         static let season = "Season "
