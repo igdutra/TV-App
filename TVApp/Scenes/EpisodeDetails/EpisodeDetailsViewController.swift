@@ -112,19 +112,19 @@ extension EpisodeDetailsViewController: ViewConfiguration {
         
         seasonTitle
             .topToBottom(of: showImageView, margin: verticalTitleSpacing)
-            .leadingToSuperview(leadingSpacing)
+            .centerHorizontalToSuperView(multiplier: 0.5)
         
         seasonLabel
             .topToBottom(of: seasonTitle, margin: verticalSpacing)
-            .horizontalToSuperview(leadingSpacing)
+            .centerHorizontal(to: seasonTitle)
         
         numberTitle
-            .topToBottom(of: seasonLabel, margin: verticalTitleSpacing)
-            .leadingToSuperview(leadingSpacing)
+            .topToTop(of: seasonTitle)
+            .centerHorizontalToSuperView(multiplier: 1.5)
         
         numberLabel
             .topToBottom(of: numberTitle, margin: verticalSpacing)
-            .horizontalToSuperview(leadingSpacing)
+            .centerHorizontal(to: numberTitle)
         
         summaryTitle
             .topToBottom(of: numberLabel, margin: verticalTitleSpacing)
