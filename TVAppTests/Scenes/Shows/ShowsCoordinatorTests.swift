@@ -11,7 +11,7 @@ import XCTest
 final class ShowsCoordinatorTests: XCTestCase {
     private let navigationSpy = NavigationViewControllerSpy(rootViewController: UIViewController())
     
-    private lazy var sut: ShowsCoordinating = {
+    private lazy var sut: ShowsCoordinatorProtocol = {
         let coordinator = ShowsCoordinator()
         coordinator.viewController = navigationSpy.topViewController
         return coordinator

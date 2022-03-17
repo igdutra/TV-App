@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShowDetails: Identifiable {
+struct ShowDetails: Identifiable, Equatable {
     let id: Int
     let name: String
     let image: String

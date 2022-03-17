@@ -1,6 +1,6 @@
 import UIKit
 
-enum ShowDetailsAction {
+enum ShowDetailsAction: Equatable {
     case episode(_ episode: Episode)
 }
 

@@ -8,17 +8,17 @@
 import Foundation
 
 // MARK: - Image
-struct Image: Decodable {
+struct Image: Decodable, Equatable {
     let medium, original: String
 }
 
 // MARK: - SelfClass
-struct SelfClass: Codable {
+struct SelfClass: Codable, Equatable {
     let href: String
 }
 
 // MARK: - Rating
-struct Rating: Codable {
+struct Rating: Codable, Equatable {
     let average: Double?
 }
 
