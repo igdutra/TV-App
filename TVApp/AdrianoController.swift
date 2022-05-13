@@ -21,19 +21,26 @@ class AdrianoController: UITableViewController {
 //        AdrianoApi.shared.fetchData { [weak self] array in
 //            self?.models = array
 //        }
-        AdrianoApi.shared.fetchData()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    print("done")
-                case .failure(let error):
-                    print(error, "errou!")
-                }
-            }, receiveValue: { [weak self] array in
-                self?.models = array
-                self?.tableView.reloadData()
-            }).store(in: &observers)
+//        AdrianoApi.shared.fetchData()
+//            .receive(on: DispatchQueue.main)
+//            .sink(receiveCompletion: { completion in
+//                switch completion {
+//                case .finished:
+//                    print("done")
+//                case .failure(let error):
+//                    print(error, "errou!")
+//                }
+//            }, receiveValue: { [weak self] array in
+//                self?.models = array
+//                self?.tableView.reloadData()
+//            }).store(in: &observers)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.loadModel()
+        }
+    }
+    
+    func loadModel() async {
+        models = await AdrianoApi.shared.fetchDataAsync()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,12 +110,17 @@ class AdrianoApi {
         }
     }
     
-    // OLD WAY COM COMPLETION
+    func fetchDataCompletion(completion: @escaping ([String]) -> Void) {
+        Timer.scheduledTimer(withTimeInterval: 3,
+                             repeats: false) { _ in
+            completion(["1", "2", "3"])
+        }
+    }
     
-//    func fetchData(completion: @escaping ([String]) -> Void) {
-//        Timer.scheduledTimer(withTimeInterval: 3,
-//                             repeats: false) { _ in
-//            completion(["1", "2", "3"])
-//        }
-//    }
+    func fetchDataAsync() async -> [String] {
+        do {
+            sleep(4)
+        }
+        return ["1", "2", "3", "4"]
+    }
 }
