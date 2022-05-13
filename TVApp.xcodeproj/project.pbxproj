@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3024BA05282F070300FFDEBB /* AdrianoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3024BA04282F070300FFDEBB /* AdrianoController.swift */; };
 		302E742A27BCA97A00FE4763 /* ChainedConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = 302E742927BCA97A00FE4763 /* ChainedConstraints */; };
 		302E742D27BCAC3200FE4763 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E742C27BCAC3200FE4763 /* ViewConfiguration.swift */; };
 		302E744527BCBB9800FE4763 /* ShowDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302E743F27BCBB9800FE4763 /* ShowDetailsCoordinator.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3024BA04282F070300FFDEBB /* AdrianoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdrianoController.swift; sourceTree = "<group>"; };
 		302E742C27BCAC3200FE4763 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		302E743F27BCBB9800FE4763 /* ShowDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsCoordinator.swift; sourceTree = "<group>"; };
 		302E744027BCBB9800FE4763 /* ShowDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsFactory.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				308AE08227BB284500366DF4 /* Resources */,
 				30C6B1A827BB405200ECE329 /* API */,
 				30C6B1A427BB3E7400ECE329 /* Helpers */,
+				30D2A9F9282F03D3005194B8 /* Components */,
 				308AE08327BB285000366DF4 /* Scenes */,
 			);
 			path = TVApp;
@@ -218,6 +221,7 @@
 				3076C76C27BA781600C19E44 /* LaunchScreen.storyboard */,
 				3076C76F27BA781600C19E44 /* Info.plist */,
 				3076C76127BA781500C19E44 /* AppDelegate.swift */,
+				3024BA04282F070300FFDEBB /* AdrianoController.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -300,7 +304,6 @@
 		30C6B1A427BB3E7400ECE329 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				30C6B1A627BB3EDF00ECE329 /* ImageView.swift */,
 				302E742B27BCABB700FE4763 /* Protocols */,
 				30C6B1A527BB3E8200ECE329 /* Extensions */,
 			);
@@ -359,6 +362,14 @@
 				30C6ED7C27BCC59A00EC55D2 /* ShowDetailsDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		30D2A9F9282F03D3005194B8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				30C6B1A627BB3EDF00ECE329 /* ImageView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		30E081B127E2BD5A0094BD5B /* EpisodeDetails */ = {
@@ -523,6 +534,7 @@
 				30C6ED8127BCCA3300EC55D2 /* UITableView.swift in Sources */,
 				30A9D5A227BDE04B008EFA79 /* ShowDataSource.swift in Sources */,
 				302E744627BCBB9800FE4763 /* ShowDetailsFactory.swift in Sources */,
+				3024BA05282F070300FFDEBB /* AdrianoController.swift in Sources */,
 				30C6B1A727BB3EDF00ECE329 /* ImageView.swift in Sources */,
 				30A9D59827BDCFEC008EFA79 /* ShowsViewController.swift in Sources */,
 				3076C76227BA781500C19E44 /* AppDelegate.swift in Sources */,

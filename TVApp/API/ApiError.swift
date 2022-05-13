@@ -13,4 +13,5 @@ enum ApiError: Error {
     case emptyData
     case decodeError(Error)
     case generalError(Error)
+    case future
 }
