@@ -13,11 +13,7 @@ class ShowTableViewCell: UITableViewCell {
     
     // MARK: - UI Elements
     
-    private lazy var showImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+    private lazy var showImageView: ImageView = .init(frame: .zero)
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -37,6 +33,7 @@ class ShowTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         showImageView.image = nil
+        showImageView.cancelTask()
     }
     
     // MARK: - Public Function

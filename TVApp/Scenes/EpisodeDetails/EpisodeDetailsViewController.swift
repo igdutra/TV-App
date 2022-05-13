@@ -24,12 +24,7 @@ final class EpisodeDetailsViewController: UIViewController {
     
     private lazy var contentView: UIView = .init()
     
-    private lazy var showImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage()
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+    private lazy var showImageView: ImageView = .init(frame: .zero)
     
     lazy var seasonTitle: UILabel = {
         let label = UILabel()

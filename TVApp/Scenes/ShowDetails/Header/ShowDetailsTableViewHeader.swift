@@ -10,12 +10,7 @@ import UIKit
 class ShowDetailsTableViewHeader: UIView {
     // MARK: - UI Elements
     
-    private lazy var showImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage()
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+    private lazy var showImageView: ImageView = .init(frame: .zero)
     
     lazy var genreTitle: UILabel = {
         let label = UILabel()
