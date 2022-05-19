@@ -34,13 +34,16 @@ class AdrianoController: UITableViewController {
 //                self?.models = array
 //                self?.tableView.reloadData()
 //            }).store(in: &observers)
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.loadModel()
+        
+        // Com Async BEEEM MELHOR
+        Task { [weak self] in
+            await self?.loadModel()
         }
     }
     
     func loadModel() async {
         models = await AdrianoApi.shared.fetchDataAsync()
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,19 +104,19 @@ class AdrianoCell: UITableViewCell {
 class AdrianoApi {
     static let shared = AdrianoApi()
     
+    func fetchDataCompletion(completion: @escaping ([String]) -> Void) {
+        Timer.scheduledTimer(withTimeInterval: 3,
+                             repeats: false) { _ in
+            completion(["1", "2", "3"])
+        }
+    }
+    
     func fetchData() -> Future<[String], ApiError> {
         return Future { promise in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 promise(.success(["1", "2", "3", "4"]))
 //                promise(.failure(.future))
             }
-        }
-    }
-    
-    func fetchDataCompletion(completion: @escaping ([String]) -> Void) {
-        Timer.scheduledTimer(withTimeInterval: 3,
-                             repeats: false) { _ in
-            completion(["1", "2", "3"])
         }
     }
     
